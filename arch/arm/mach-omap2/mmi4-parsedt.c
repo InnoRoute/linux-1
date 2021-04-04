@@ -41,9 +41,10 @@ extern int ofsp8_400_get_tspendown(void);
 };
 */
 
-struct mcp23017_platform_data default_mcp23017_io_ex = {
+/*struct mcp23017_platform_data default_mcp23017_io_ex = {
 	.gpio_base = 220,
 };
+*/
 
 /* dt helpers */
 static u32 device_is_enabled( char* enable_key )
@@ -307,10 +308,10 @@ int fill_i2c_platdata(struct i2c_board_info * binfo, struct property *prop) {
 		binfo->platform_data = &default_qt2160;
 	}
 	*/
-    if( strcmp (binfo->type, "mcp23017") == 0) {
+  /*  if( strcmp (binfo->type, "mcp23017") == 0) {
 		binfo->platform_data = &default_mcp23017_io_ex;
 	}    
-
+*/
 	return 0;
 }
 
