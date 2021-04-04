@@ -10,13 +10,14 @@
 #include <linux/of_irq.h>
 #include <linux/of_platform.h>
 #include <linux/gpio.h>
-
-#include <plat/usb.h> 
 #include <plat/gpmc.h>
+#include <linux/platform_data/usb-omap.h>
+//#include <plat/usb.h> 
 #include <linux/i2c.h>
 #include <linux/slab.h>
 #include "mmi4-parsedt.h"
-#include <linux/i2c-gpio.h>
+//#include <linux/i2c-gpio.h>
+#include <linux/platform_data/i2c-gpio.h>
 #include <linux/pwm_backlight.h>
 #include <linux/leds.h>
 #include <linux/i2c/mcp23017.h>
