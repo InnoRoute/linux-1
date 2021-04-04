@@ -212,9 +212,7 @@
 	status = "disabled";
 };
 
-//&counter32k {
-//	status = "disabled";
-//};
+
 
 };
 
