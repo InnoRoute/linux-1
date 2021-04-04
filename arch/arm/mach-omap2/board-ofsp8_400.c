@@ -908,9 +908,9 @@ static struct omap_board_mux board_mux_default[] __initdata = {
 static void ofsp8_400_reset(char mode, const char *cmd)
 {
 	pr_notice("mmi4: Trigger TWL4030 internal watchdog (1s) to reset itself");
-	twl_i2c_write_u8(TWL4030_MODULE_PM_RECEIVER, 1, TWL4030_WATCHDOG_CFG_REG_OFFS);
+//	twl_i2c_write_u8(TWL4030_MODULE_PM_RECEIVER, 1, TWL4030_WATCHDOG_CFG_REG_OFFS);
 
-	omap_prcm_restart( mode, cmd);
+//	omap_prcm_restart( mode, cmd);
 }
 
 static int ofmux2reg( const char *type ){
@@ -973,7 +973,7 @@ static void __init ofsp8_400_init(void)
 		 * yet working, so doing muxing our own way: */
 		mux_ue_pinctrl();
 	}
-	omap_hsmmc_init( get_omap2_hsmmc_info(mmc) );
+	//omap_hsmmc_init( get_omap2_hsmmc_info(mmc) );
 //	ofsp8_400_flash_init();
 //	ofsp8_400_i2c_init();
 //	ofsp8_400_gpioled_setup();
