@@ -426,47 +426,47 @@ void __init ofsp8_400_i2c_init(void)
 {
 	int i;
 	int maxbusid = 2;
-	struct i2c_board_info *i2c_boardinfo = ofsp8_400_i2c2_boardinfo;
-	struct i2c_bus_hw_info *hw_bus_info = NULL;
-	struct i2c_bus_bb_info *bb_bus_info = NULL;
-	int numdev = 3;
+/*	struct i2c_board_info *i2c_boardinfo = ofsp8_400_i2c2_boardinfo;*/
+/*	struct i2c_bus_hw_info *hw_bus_info = NULL;*/
+/*	struct i2c_bus_bb_info *bb_bus_info = NULL;*/
+/*	int numdev = 3;*/
 
-	/* Initialize omap i2c bus 1 */
-	omap3_pmic_get_config(&ofsp8_400_twldata,
-			TWL_COMMON_PDATA_USB | TWL_COMMON_PDATA_MADC |
-			TWL_COMMON_PDATA_AUDIO,
-			TWL_COMMON_REGULATOR_VDAC | TWL_COMMON_REGULATOR_VPLL2);
+/*	/* Initialize omap i2c bus 1 */*/
+/*	omap3_pmic_get_config(&ofsp8_400_twldata,*/
+/*			TWL_COMMON_PDATA_USB | TWL_COMMON_PDATA_MADC |*/
+/*			TWL_COMMON_PDATA_AUDIO,*/
+/*			TWL_COMMON_REGULATOR_VDAC | TWL_COMMON_REGULATOR_VPLL2);*/
 
-	ofsp8_400_twldata.vdac->constraints.apply_uV = true;
-	ofsp8_400_twldata.vpll2->constraints.apply_uV = true;
+/*	ofsp8_400_twldata.vdac->constraints.apply_uV = true;*/
+/*	ofsp8_400_twldata.vpll2->constraints.apply_uV = true;*/
 
-	omap3_pmic_init("tps65950", &ofsp8_400_twldata);
-	
-	get_max_i2c_bus_id(&maxbusid);
+/*	omap3_pmic_init("tps65950", &ofsp8_400_twldata);*/
+/*	*/
+/*	get_max_i2c_bus_id(&maxbusid);*/
 
-	for(i = 1; i < (maxbusid + 1); i++) {
+/*	for(i = 1; i < (maxbusid + 1); i++) {*/
 
-		/* bit banging*/
-		bb_bus_info = fill_i2c_bus_bb_info(bb_bus_info, i);
-		if(bb_bus_info == NULL)
-			continue;
-		i2c_boardinfo = get_i2c_devices(i2c_boardinfo, i, &numdev);
-		platform_device_register(bb_bus_info->gpio_i2c);
-		i2c_register_board_info(bb_bus_info->id, i2c_boardinfo,
-				numdev);
-	}
+/*		/* bit banging*/*/
+/*		bb_bus_info = fill_i2c_bus_bb_info(bb_bus_info, i);*/
+/*		if(bb_bus_info == NULL)*/
+/*			continue;*/
+/*		i2c_boardinfo = get_i2c_devices(i2c_boardinfo, i, &numdev);*/
+/*		platform_device_register(bb_bus_info->gpio_i2c);*/
+/*		i2c_register_board_info(bb_bus_info->id, i2c_boardinfo,*/
+/*				numdev);*/
+/*	}*/
 
-	for(i = 1; i < (maxbusid + 1); i++) {
+/*	for(i = 1; i < (maxbusid + 1); i++) {*/
 
-		hw_bus_info = fill_i2c_bus_hw_info(&default_i2c_hw_bus, i);
-		if(hw_bus_info == NULL) {
-			continue;
-		}
-		i2c_boardinfo = get_i2c_devices(i2c_boardinfo, i, &numdev);
-		omap_register_i2c_bus(hw_bus_info->id, hw_bus_info->freq,
-				i2c_boardinfo, numdev);
+/*		hw_bus_info = fill_i2c_bus_hw_info(&default_i2c_hw_bus, i);*/
+/*		if(hw_bus_info == NULL) {*/
+/*			continue;*/
+/*		}*/
+/*		i2c_boardinfo = get_i2c_devices(i2c_boardinfo, i, &numdev);*/
+/*		omap_register_i2c_bus(hw_bus_info->id, hw_bus_info->freq,*/
+/*				i2c_boardinfo, numdev);*/
 
-	}
+/*	}*/
 }
 
 /* MUSB */
