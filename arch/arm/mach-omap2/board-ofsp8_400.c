@@ -446,7 +446,7 @@ void __init ofsp8_400_i2c_init(void)
 
 /*	for(i = 1; i < (maxbusid + 1); i++) {*/
 
-/*		/* bit banging*/*/
+/*		// bit banging
 /*		bb_bus_info = fill_i2c_bus_bb_info(bb_bus_info, i);*/
 /*		if(bb_bus_info == NULL)*/
 /*			continue;*/
@@ -595,11 +595,11 @@ static void ofsp8_400_panel_disable_tv(struct omap_dss_device *dssdev)
 
 //#include "mmi4-displays.h"
 
-static struct omap_dss_board_info ofsp8_400_dss_data = {
-	.num_devices	= ARRAY_SIZE(mmi4_dss_devices),
-	.devices	= mmi4_dss_devices,
-	.default_device	= MMI4_DSS_DEFAULT_PANEL,
-};
+/*static struct omap_dss_board_info ofsp8_400_dss_data = {*/
+/*	.num_devices	= ARRAY_SIZE(mmi4_dss_devices),*/
+/*	.devices	= mmi4_dss_devices,*/
+/*	.default_device	= MMI4_DSS_DEFAULT_PANEL,*/
+/*};*/
 
 void __init ofsp8_400_display_init(void)
 {
