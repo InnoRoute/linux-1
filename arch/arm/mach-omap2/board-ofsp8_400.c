@@ -303,43 +303,43 @@ static struct regulator_consumer_supply custom3_twl_vio_supplies[]= {
         REGULATOR_SUPPLY("hsusb0", "ehci-omap.0"),
 };
 
-static struct gpio_led ofsp8_400_gpio_leds[] = {
-	{
-		.name                   = "ofsp8_400:buzzer",
-		.default_trigger        = "none",
-		.active_low             = true,
-		.gpio                   = BUZZER,
-		.default_state          = LEDS_GPIO_DEFSTATE_OFF,
-	},
-	{
-		.name                   = "ofsp8_400:speaker_mute",
-		.default_trigger        = "none",
-		.active_low             = false,
-		.gpio                   = AUDIO_MUTE_AMPLIFIER,
-		.default_state          = LEDS_GPIO_DEFSTATE_ON,
-	},
-};
+/*static struct gpio_led ofsp8_400_gpio_leds[] = {*/
+/*	{*/
+/*		.name                   = "ofsp8_400:buzzer",*/
+/*		.default_trigger        = "none",*/
+/*		.active_low             = true,*/
+/*		.gpio                   = BUZZER,*/
+/*		.default_state          = LEDS_GPIO_DEFSTATE_OFF,*/
+/*	},*/
+/*	{*/
+/*		.name                   = "ofsp8_400:speaker_mute",*/
+/*		.default_trigger        = "none",*/
+/*		.active_low             = false,*/
+/*		.gpio                   = AUDIO_MUTE_AMPLIFIER,*/
+/*		.default_state          = LEDS_GPIO_DEFSTATE_ON,*/
+/*	},*/
+/*};*/
 
-static struct gpio_led_platform_data gpio_led_info = {
-	.leds           = ofsp8_400_gpio_leds,
-	.num_leds       = ARRAY_SIZE(ofsp8_400_gpio_leds),
-};
+/*static struct gpio_led_platform_data gpio_led_info = {*/
+/*	.leds           = ofsp8_400_gpio_leds,*/
+/*	.num_leds       = ARRAY_SIZE(ofsp8_400_gpio_leds),*/
+/*};*/
 
-static struct platform_device gpio_led_device = {
-	.name   = "leds-gpio",
-	.id     = -1,
-	.dev    = {
-		.platform_data  = &gpio_led_info,
-	},
-};
+/*static struct platform_device gpio_led_device = {*/
+/*	.name   = "leds-gpio",*/
+/*	.id     = -1,*/
+/*	.dev    = {*/
+/*		.platform_data  = &gpio_led_info,*/
+/*	},*/
+/*};*/
 
 void __init ofsp8_400_gpioled_setup(void)
 {
-	if( fill_gpioled_dev( &gpio_led_device ) != 0 )
-		return;
+/*	if( fill_gpioled_dev( &gpio_led_device ) != 0 )*/
+/*		return;*/
 
-	if (platform_device_register(&gpio_led_device) < 0)
-		pr_err("leds_gpio: Unable to register ofsp8 leds\n");
+/*	if (platform_device_register(&gpio_led_device) < 0)*/
+/*		pr_err("leds_gpio: Unable to register ofsp8 leds\n");*/
 }
 
 static int ofsp8_400_twl_gpio_setup(struct device *dev,
