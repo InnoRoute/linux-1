@@ -632,7 +632,7 @@ void __init ofsp8_400_display_init(void)
 
 /*	for (disp = 0; disp < ARRAY_SIZE(mmi4_dss_devices); disp++) {*/
 /*		if (mmi4_dss_devices[disp]->type == OMAP_DISPLAY_TYPE_VENC) {*/
-/*			/* Analog Video */*/
+/*			// Analog Video */
 /*			mmi4_dss_devices[disp]->platform_disable=*/
 /*				ofsp8_400_panel_disable_tv;*/
 /*			mmi4_dss_devices[disp]->platform_enable =*/
