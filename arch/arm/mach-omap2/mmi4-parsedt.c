@@ -281,7 +281,7 @@ int fill_usbhs_bdata(struct usbhs_omap_platform_data* board_data) {
 
 if( device_is_enabled("i_enable_ehci")) {
 	get_int_from_dtb("i_usb_reset_gpio", &board_data->reset_gpio_port[0]);
-	get_int_from_dtb("i_ehci_power", &board_data->power);
+//	get_int_from_dtb("i_ehci_power", &board_data->power);
  	return 0;
 } 
 else
@@ -416,8 +416,8 @@ struct i2c_bus_bb_info * fill_i2c_bus_bb_info(struct i2c_bus_bb_info *bus_info, 
 				bus_info->gpio_i2c->id = bus_info->id;
 
 				gpio_i2c_pdata->udelay = get_intstr2int_from_index(1, pp->name);
-				gpio_i2c_pdata->scl_pin = get_intstr2int_from_index(2, pp->name);
-				gpio_i2c_pdata->sda_pin = get_intstr2int_from_index(3, pp->name);
+//				gpio_i2c_pdata->scl_pin = get_intstr2int_from_index(2, pp->name);
+//				gpio_i2c_pdata->sda_pin = get_intstr2int_from_index(3, pp->name);
 				gpio_i2c_pdata->timeout = HZ;
 				bus_info->gpio_i2c->dev.platform_data =
 					gpio_i2c_pdata;

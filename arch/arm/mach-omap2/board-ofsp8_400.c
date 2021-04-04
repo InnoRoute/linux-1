@@ -971,17 +971,17 @@ static void __init ofsp8_400_init(void)
 		mux_ue_pinctrl();
 	}
 	omap_hsmmc_init( get_omap2_hsmmc_info(mmc) );
-	ofsp8_400_flash_init();
-	ofsp8_400_i2c_init();
-	ofsp8_400_gpioled_setup();
-        ofsp8_400_display_init();
-	omap_serial_init();
-	omap_sdrc_init(NULL, NULL);
-	ofsp8_400_audio_init();
+//	ofsp8_400_flash_init();
+//	ofsp8_400_i2c_init();
+//	ofsp8_400_gpioled_setup();
+//        ofsp8_400_display_init();
+//	omap_serial_init();
+//	omap_sdrc_init(NULL, NULL);
+//	ofsp8_400_audio_init();
 	ofsp8_400_eth_init();
-	ofsp8_400_can_init();
+//	ofsp8_400_can_init();
 
-	if(! fill_musb_board_data(&ofsp8_400_musb_board_data))
+/*	if(! fill_musb_board_data(&ofsp8_400_musb_board_data))
 		usb_musb_init(&ofsp8_400_musb_board_data);
 
         if(! fill_usbhs_bdata(&usbhs_bdata)) {
@@ -990,6 +990,7 @@ static void __init ofsp8_400_init(void)
                 }
 		usbhs_init(&usbhs_bdata);
         }
+*/
 }
 
 __setup("ethaddr=", setup_ethmac);
