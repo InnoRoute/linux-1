@@ -92,12 +92,12 @@ struct i2c_bus_hw_info default_i2c_hw_bus = {
 	.freq = 100,
 };
 
-struct tsc2007_platform_data ofsp8_400_tscdata = {
-	.model                  = 2007,
-	.x_plate_ohms           = 50,
-	.get_pendown_state      = ofsp8_400_get_tspendown,
-	.irq_flags              = IRQF_TRIGGER_FALLING,
-};
+/*struct tsc2007_platform_data ofsp8_400_tscdata = {*/
+/*	.model                  = 2007,*/
+/*	.x_plate_ohms           = 50,*/
+/*	.get_pendown_state      = ofsp8_400_get_tspendown,*/
+/*	.irq_flags              = IRQF_TRIGGER_FALLING,*/
+/*};*/
 
 static struct i2c_board_info __initdata ofsp8_400_i2c2_boardinfo[] = {
 	{
@@ -106,27 +106,27 @@ static struct i2c_board_info __initdata ofsp8_400_i2c2_boardinfo[] = {
 	{
 		I2C_BOARD_INFO("24c32", 0x50),
 	},
-	{
-		I2C_BOARD_INFO("tsc2007", 0x48),
-		.platform_data = &ofsp8_400_tscdata,
-	},
+/*	{*/
+/*		I2C_BOARD_INFO("tsc2007", 0x48),*/
+/*		.platform_data = &ofsp8_400_tscdata,*/
+/*	},*/
 };
 
 /* NAND flash */
 
-static struct omap_nand_platform_data ofsp8_400_nand_data = {
-	.cs		= NAND_CS,
-	.devsize	= NAND_BUSWIDTH_16, /* 16-bit */
-	.ecc_opt	= OMAP_ECC_BCH8_CODE_HW,
-};
+/*static struct omap_nand_platform_data ofsp8_400_nand_data = {*/
+/*	.cs		= NAND_CS,*/
+/*	.devsize	= NAND_BUSWIDTH_16, /* 16-bit */*/
+/*	.ecc_opt	= OMAP_ECC_BCH8_CODE_HW,*/
+/*};*/
 
-void __init ofsp8_400_flash_init(void)
-{
-	if( get_nand_pdata(&ofsp8_400_nand_data) == NULL ) 
-		return; 
-	if (gpmc_nand_init(&ofsp8_400_nand_data) < 0)
-		pr_err(NAND_DRIVER_NAME ": Unable to register NAND device\n");
-}
+/*void __init ofsp8_400_flash_init(void)*/
+/*{*/
+/*	if( get_nand_pdata(&ofsp8_400_nand_data) == NULL ) */
+/*		return; */
+/*	if (gpmc_nand_init(&ofsp8_400_nand_data) < 0)*/
+/*		pr_err(NAND_DRIVER_NAME ": Unable to register NAND device\n");*/
+/*}*/
 
 /* Ethernet (Asix AX88796 10/100 ethernet controller) */
 
