@@ -18,7 +18,7 @@
 #include <linux/i2c.h>
 //#include <linux/i2c-gpio.h>
 #include <linux/platform_data/i2c-gpio.h>
-#include <linux/i2c/tsc2007.h>
+//#include <linux/i2c/tsc2007.h>
 #include <linux/i2c/twl.h>
 #include <linux/mmc/card.h>
 #include <linux/platform_device.h>
