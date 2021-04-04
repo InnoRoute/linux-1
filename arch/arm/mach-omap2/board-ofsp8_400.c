@@ -18,9 +18,11 @@
 #include <linux/i2c.h>
 //#include <linux/i2c-gpio.h>
 #include <linux/platform_data/i2c-gpio.h>
+#include <linux/platform_data/i2c-omap.h>
 //#include <linux/i2c/tsc2007.h>
 
 //#include <linux/i2c/twl.h> // needed?
+#include <linux/platform_data/omap-twl4030.h>
 
 #include <linux/mmc/card.h>
 #include <linux/platform_device.h>
@@ -42,15 +44,19 @@
 #include <asm/mach/map.h>
 #include <asm/mach/flash.h>
 
-#include <plat/board.h>
+//#include <plat/board.h> needd?
 #include "common.h"
-#include <plat/prcm.h>
+//#include <plat/prcm.h> needed?
 //#include <video/omapdss.h>
 //#include <video/omap-panel-generic-dpi.h>
-#include <plat/gpmc.h>
-#include <plat/nand.h>
-#include <plat/mmc.h>
-#include <plat/usb.h>
+//#include <plat/gpmc.h>
+#include <linux/platform_data/omap-gpmc.h>
+//#include <plat/nand.h>
+#include <linux/platform_data/mtd-nand-omap2.h>
+//#include <plat/mmc.h>
+#include <linux/platform_data/mmc-omap.h>
+//#include <plat/usb.h>
+#include <linux/platform_data/usb-omap.h>
 #include <linux/fb.h>
 
 #include "mux.h"
