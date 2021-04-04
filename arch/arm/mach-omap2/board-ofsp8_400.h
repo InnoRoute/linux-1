@@ -38,15 +38,16 @@
 
 
 int g_tsc2007_gpio = 167;
-union i2c_bus_platform_data;
+
+/*union i2c_bus_platform_data;
 struct tsc2007_platform_data ofsp8_400_tscdata;
 struct qt2160_platform_data ofsp8_400_qt2160_info;
-
-union i2c_bus_platform_data {
+*/
+/*union i2c_bus_platform_data {
 	struct tsc2007_platform_data ofsp8_400_tscdata;
 	struct qt2160_platform_data ofsp8_400_qt2160_info;
 };
-
+*/
 int ofsp8_400_get_tspendown(void);
 
 
