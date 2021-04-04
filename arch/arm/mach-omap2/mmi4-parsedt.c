@@ -34,11 +34,12 @@ extern int ofsp8_400_get_tspendown(void);
 };
 */
 
-struct qt2160_platform_data default_qt2160 = {
+/*struct qt2160_platform_data default_qt2160 = {
 	.slider_length = 8,
 	.slider_axis = ABS_X,
 
 };
+*/
 
 struct mcp23017_platform_data default_mcp23017_io_ex = {
 	.gpio_base = 220,
@@ -302,9 +303,10 @@ int fill_i2c_platdata(struct i2c_board_info * binfo, struct property *prop) {
 		binfo->platform_data = &default_tsc2007_struct;
 		g_tsc2007_gpio = get_intstr2int_from_index(3, prop->name);
 	}*/
-	if( strncmp (binfo->type, "qt2160-slider", 13) == 0) {
+	/*if( strncmp (binfo->type, "qt2160-slider", 13) == 0) {
 		binfo->platform_data = &default_qt2160;
 	}
+	*/
     if( strcmp (binfo->type, "mcp23017") == 0) {
 		binfo->platform_data = &default_mcp23017_io_ex;
 	}    
