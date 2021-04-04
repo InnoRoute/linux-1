@@ -26,12 +26,13 @@
 extern int g_tsc2007_gpio;
 extern int ofsp8_400_get_tspendown(void);
 
-struct tsc2007_platform_data default_tsc2007_struct = {
+/*struct tsc2007_platform_data default_tsc2007_struct = {
 	.model                  = 2007,
 	.x_plate_ohms           = 50,
 	.get_pendown_state      = ofsp8_400_get_tspendown,
 	.irq_flags		= IRQF_TRIGGER_FALLING,
 };
+*/
 
 struct qt2160_platform_data default_qt2160 = {
 	.slider_length = 8,
@@ -297,10 +298,10 @@ if( device_is_enabled("i_enable_eth")) {
 
 
 int fill_i2c_platdata(struct i2c_board_info * binfo, struct property *prop) {
-	if( strcmp (binfo->type, "tsc2007") == 0) {
+/*	if( strcmp (binfo->type, "tsc2007") == 0) {
 		binfo->platform_data = &default_tsc2007_struct;
 		g_tsc2007_gpio = get_intstr2int_from_index(3, prop->name);
-	}
+	}*/
 	if( strncmp (binfo->type, "qt2160-slider", 13) == 0) {
 		binfo->platform_data = &default_qt2160;
 	}
