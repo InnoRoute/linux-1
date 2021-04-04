@@ -688,61 +688,63 @@ static int sja1000_gpmc_retime( u32 cs ) {
 	struct gpmc_timings t;
 	u32 l;
 	
-	int twal = 20;
-	int tllrl = 30;
-	int tclrl = 10;
-	int twr = 50;
+/*	int twal = 20;*/
+/*	int tllrl = 30;*/
+/*	int tclrl = 10;*/
+/*	int twr = 50;*/
 
-	int tllwl = 30;
-	int tww = 40;
+/*	int tllwl = 30;*/
+/*	int tww = 40;*/
+/*	*/
+/*	memset(&t, 0, sizeof(t));*/
+
+/*	// ALE Signal handling */
+/*	//Signal is inverted */
+
+/*	t.adv_on = twal;*/
+/*	t.adv_wr_off = 0;*/
+/*	t.adv_rd_off = 0;*/
+
+
+/*	// Read Timings */
+
+/*	t.access = 120;*/
+
+/*	t.cs_on = t.adv_on + tllrl - tclrl;*/
+/*	t.cs_rd_off = t.access + 10;*/
+/*	t.rd_cycle = t.cs_rd_off + 10;	*/
+/*	*/
+/*	t.oe_on  =  t.adv_on + tllrl;*/
+/*	t.oe_off =  t.oe_on + twr;     */
+/*	*/
+
+/*	/* Write timings */*/
+/*	*/
+/*	t.wr_access = 100;*/
+/*	t.cs_wr_off = t.wr_access + 10;*/
+/*	*/
+/*	*/
+/*	t.we_on  = t.adv_on + tllwl;*/
+/*	t.we_off = t.we_on + tww;	*/
+
+/*	t.wr_cycle = t.cs_wr_off + 10; */
+/*	*/
+/*	if (cpu_is_omap34xx()) {*/
+/*		t.wr_data_mux_bus = twal + tllwl;*/
+/*	}			*/
+
+
+/*	/* Setup Config1 Register:*/
+/*	Device Size 8 BIT & muxdata enabled */*/
+
+/*	l = GPMC_CONFIG1_DEVICESIZE(0);   */
+/*   	l |= GPMC_CONFIG1_MUXADDDATA;*/
+/*        */
+/*	gpmc_cs_write_reg(cs, GPMC_CS_CONFIG1, l);*/
+
+/*	return gpmc_cs_set_timings(cs, &t);*/
+/*	*/
 	
-	memset(&t, 0, sizeof(t));
-
-	/* ALE Signal handling 
-	Signal is inverted */
-
-	t.adv_on = twal;
-	t.adv_wr_off = 0;
-	t.adv_rd_off = 0;
-
-
-	/* Read Timings */
-
-	t.access = 120;
-
-	t.cs_on = t.adv_on + tllrl - tclrl;
-	t.cs_rd_off = t.access + 10;
-	t.rd_cycle = t.cs_rd_off + 10;	
-	
-	t.oe_on  =  t.adv_on + tllrl;
-	t.oe_off =  t.oe_on + twr;     
-	
-
-	/* Write timings */
-	
-	t.wr_access = 100;
-	t.cs_wr_off = t.wr_access + 10;
-	
-	
-	t.we_on  = t.adv_on + tllwl;
-	t.we_off = t.we_on + tww;	
-
-	t.wr_cycle = t.cs_wr_off + 10; 
-	
-	if (cpu_is_omap34xx()) {
-		t.wr_data_mux_bus = twal + tllwl;
-	}			
-
-
-	/* Setup Config1 Register:
-	Device Size 8 BIT & muxdata enabled */
-
-	l = GPMC_CONFIG1_DEVICESIZE(0);   
-   	l |= GPMC_CONFIG1_MUXADDDATA;
-        
-	gpmc_cs_write_reg(cs, GPMC_CS_CONFIG1, l);
-
-	return gpmc_cs_set_timings(cs, &t);
 }
 
 
