@@ -734,8 +734,8 @@ static int sja1000_gpmc_retime( u32 cs ) {
 /*	}			*/
 
 
-/*	/* Setup Config1 Register:*/
-/*	Device Size 8 BIT & muxdata enabled */*/
+/*	// Setup Config1 Register:*/
+/*//	Device Size 8 BIT & muxdata enabled */
 
 /*	l = GPMC_CONFIG1_DEVICESIZE(0);   */
 /*   	l |= GPMC_CONFIG1_MUXADDDATA;*/
