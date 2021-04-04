@@ -761,7 +761,7 @@ void __init ofsp8_400_can_init(void)
 /*	if( get_can_dev(&ofsp8_400_can_device, &can_data) == NULL )*/
 /*		return;*/
 /*	*/
-/*	/* Setup the GMPC CONFIG_5_i Registers */*/
+/*	// Setup the GMPC CONFIG_5_i Registers */
 /*	sja1000_gpmc_retime( can_data.cs );*/
 
 /*	*/
