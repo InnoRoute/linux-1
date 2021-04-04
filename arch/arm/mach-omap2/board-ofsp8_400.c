@@ -431,7 +431,7 @@ void __init ofsp8_400_i2c_init(void)
 /*	struct i2c_bus_bb_info *bb_bus_info = NULL;*/
 /*	int numdev = 3;*/
 
-/*	/* Initialize omap i2c bus 1 */*/
+/*	// Initialize omap i2c bus 1 */
 /*	omap3_pmic_get_config(&ofsp8_400_twldata,*/
 /*			TWL_COMMON_PDATA_USB | TWL_COMMON_PDATA_MADC |*/
 /*			TWL_COMMON_PDATA_AUDIO,*/
@@ -593,7 +593,7 @@ static void ofsp8_400_panel_disable_tv(struct omap_dss_device *dssdev)
 {
 }
 
-#include "mmi4-displays.h"
+//#include "mmi4-displays.h"
 
 static struct omap_dss_board_info ofsp8_400_dss_data = {
 	.num_devices	= ARRAY_SIZE(mmi4_dss_devices),
