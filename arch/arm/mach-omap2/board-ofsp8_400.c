@@ -275,16 +275,16 @@ void __init ofsp8_400_eth_init(void)
 
 /* High speed MMC card */
 
-static struct omap2_hsmmc_info mmc[] = {
-	{
-		.mmc		= 1,
-		.caps		= MMC_CAP_4_BIT_DATA,
-		.gpio_cd	= -EINVAL,
-		.gpio_wp	= MMC_GPIO_WP,
-		.deferred	= true,
-	},
-	{}	/* Terminator */
-};
+/*static struct omap2_hsmmc_info mmc[] = {*/
+/*	{*/
+/*		.mmc		= 1,*/
+/*		.caps		= MMC_BUS_WIDTH_4,*/
+/*		.gpio_cd	= -EINVAL,*/
+/*		.gpio_wp	= MMC_GPIO_WP,*/
+/*		.deferred	= true,*/
+/*	},*/
+/*	{}//	 Terminator */
+/*};*/
 
 /* User interface */
 
@@ -345,8 +345,8 @@ void __init ofsp8_400_gpioled_setup(void)
 static int ofsp8_400_twl_gpio_setup(struct device *dev,
 		unsigned gpio, unsigned ngpio)
 {
-	mmc[0].gpio_cd = gpio + 0;
-	omap_hsmmc_late_init( get_omap2_hsmmc_info(mmc) );
+/*	mmc[0].gpio_cd = gpio + 0;*/
+/*	omap_hsmmc_late_init( get_omap2_hsmmc_info(mmc) );*/
 
 	return 0;
 }
