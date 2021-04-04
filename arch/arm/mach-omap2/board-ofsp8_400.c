@@ -1005,9 +1005,9 @@ MACHINE_START(OMAP3_OFSP8_KERNEL400, "Ultratronik OFSP8 Rev.400 and higher")
 	.reserve	= omap_reserve,
 	.init_early	= omap35xx_init_early,
 //	.init_irq	= omap3_init_irq,
-	.handle_irq	= omap3_intc_handle_irq,
+//	.handle_irq	= omap3_intc_handle_irq,
 	.init_machine	= ofsp8_400_init,
-	.timer		= &omap3_secure_timer,
+//	.timer		= &omap3_secure_timer,
 	.dt_compat	= omap3_boards_compat,
 	.restart	= ofsp8_400_reset,
 MACHINE_END
