@@ -638,7 +638,7 @@ void __init ofsp8_400_display_init(void)
 /*			mmi4_dss_devices[disp]->platform_enable =*/
 /*				ofsp8_400_panel_enable_tv;*/
 /*		} else {*/
-/*			/* LCD */*/
+/*			// LCD */
 /*			mmi4_dss_devices[disp]->platform_disable=*/
 /*				ofsp8_400_panel_disable_lcd;*/
 /*			mmi4_dss_devices[disp]->platform_enable =*/
@@ -718,7 +718,7 @@ static int sja1000_gpmc_retime( u32 cs ) {
 /*	t.oe_off =  t.oe_on + twr;     */
 /*	*/
 
-/*	/* Write timings */*/
+/*	// Write timings */
 /*	*/
 /*	t.wr_access = 100;*/
 /*	t.cs_wr_off = t.wr_access + 10;*/
@@ -758,43 +758,43 @@ void __init ofsp8_400_can_init(void)
 	unsigned long cs_mem_base;
 	int err;
 
-	if( get_can_dev(&ofsp8_400_can_device, &can_data) == NULL )
-		return;
-	
-	/* Setup the GMPC CONFIG_5_i Registers */
-	sja1000_gpmc_retime( can_data.cs );
+/*	if( get_can_dev(&ofsp8_400_can_device, &can_data) == NULL )*/
+/*		return;*/
+/*	*/
+/*	/* Setup the GMPC CONFIG_5_i Registers */*/
+/*	sja1000_gpmc_retime( can_data.cs );*/
 
-	
-	if (gpmc_cs_request(can_data.cs, SZ_16M, &cs_mem_base) < 0) {
-		pr_err("%s: Failed to request GPMC memory\n", ofsp8_400_can_device.name);
-		return;
-	}
-	
-	ofsp8_400_can_resources[0].start = cs_mem_base;
-	ofsp8_400_can_resources[0].end = cs_mem_base + 0x100 - 1;
-	
-	ofsp8_400_can_resources[1].start = gpio_to_irq(can_data.irq_gpio);
-	ofsp8_400_can_resources[1].end= gpio_to_irq(can_data.irq_gpio);	
+/*	*/
+/*	if (gpmc_cs_request(can_data.cs, SZ_16M, &cs_mem_base) < 0) {*/
+/*		pr_err("%s: Failed to request GPMC memory\n", ofsp8_400_can_device.name);*/
+/*		return;*/
+/*	}*/
+/*	*/
+/*	ofsp8_400_can_resources[0].start = cs_mem_base;*/
+/*	ofsp8_400_can_resources[0].end = cs_mem_base + 0x100 - 1;*/
+/*	*/
+/*	ofsp8_400_can_resources[1].start = gpio_to_irq(can_data.irq_gpio);*/
+/*	ofsp8_400_can_resources[1].end= gpio_to_irq(can_data.irq_gpio);	*/
 
-	err = gpio_request(can_data.irq_gpio, "CAN driver irq");
-	if (err) {
-		pr_err("%s: Failed to request GPIO%d for IRQ\n", ofsp8_400_can_device.name,
-				can_data.irq_gpio);
-		goto err_req_gpio_irq;
-	}
-	gpio_direction_input(can_data.irq_gpio);
+/*	err = gpio_request(can_data.irq_gpio, "CAN driver irq");*/
+/*	if (err) {*/
+/*		pr_err("%s: Failed to request GPIO%d for IRQ\n", ofsp8_400_can_device.name,*/
+/*				can_data.irq_gpio);*/
+/*		goto err_req_gpio_irq;*/
+/*	}*/
+/*	gpio_direction_input(can_data.irq_gpio);*/
 
-	err = platform_device_register(&ofsp8_400_can_device);
-	if (err) {
-		pr_err("%s: Failed to add platform device\n", ofsp8_400_can_device.name);
-		goto err_pdev;
-	}
-	
-	return;
+/*	err = platform_device_register(&ofsp8_400_can_device);*/
+/*	if (err) {*/
+/*		pr_err("%s: Failed to add platform device\n", ofsp8_400_can_device.name);*/
+/*		goto err_pdev;*/
+/*	}*/
+/*	*/
+/*	return;*/
 
-err_pdev:
-	gpio_free(can_data.irq_gpio);
-err_req_gpio_irq:
+/*err_pdev:*/
+/*	gpio_free(can_data.irq_gpio);*/
+/*err_req_gpio_irq:*/
 	return;
 }
 
