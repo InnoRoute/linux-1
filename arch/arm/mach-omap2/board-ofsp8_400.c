@@ -116,7 +116,7 @@ static struct i2c_board_info __initdata ofsp8_400_i2c2_boardinfo[] = {
 
 /*static struct omap_nand_platform_data ofsp8_400_nand_data = {*/
 /*	.cs		= NAND_CS,*/
-/*	.devsize	= NAND_BUSWIDTH_16, /* 16-bit */*/
+/*	.devsize	= NAND_BUSWIDTH_16, // 16-bit */
 /*	.ecc_opt	= OMAP_ECC_BCH8_CODE_HW,*/
 /*};*/
 
