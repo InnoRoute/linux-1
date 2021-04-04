@@ -221,11 +221,11 @@ void __init ofsp8_400_eth_init(void)
 /*	if(fill_eth_platform_device(&ofsp8_400_eth_device, &eth_data))*/
 /*		return;*/
 
-/*	/* ax88796 driver does not support clk-framework, so clk_get*/
-/*	 * and clk_enable should be called here. But as this is*/
-/*	 * called before clk-initialization this is not possible.*/
-/*	 * So we relay on other hardware to keep l3_clk alive.*/
-/*	 */*/
+/*	 ax88796 driver does not support clk-framework, so clk_get
+	  and clk_enable should be called here. But as this is
+	  called before clk-initialization this is not possible.
+	  So we relay on other hardware to keep l3_clk alive.
+	 */
 
 /*	err = gpio_request(eth_data.irq_gpio, ETH_DRIVER_NAME " irq");*/
 /*	if (err) {*/
@@ -608,7 +608,7 @@ void __init ofsp8_400_display_init(void)
 /*	if( get_display_info( &ofsp8_400_display_info ) == NULL )*/
 /*		return;*/
 
-/*	/* Display without Backlight will crash the kernel so we better check. */*/
+/*	// Display without Backlight will crash the kernel so we better check. */
 
 /*	if( ofsp8_400_pwm_init() != 0 )*/
 /*		return;*/
