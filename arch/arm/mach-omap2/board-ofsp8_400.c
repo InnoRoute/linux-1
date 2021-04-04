@@ -56,7 +56,7 @@
 //#include <plat/mmc.h>
 #include <linux/platform_data/mmc-omap.h>
 //#include <plat/usb.h>
-#include <linux/platform_data/usb-omap.h>
+//#include <linux/platform_data/usb-omap.h>
 #include <linux/fb.h>
 
 #include "mux.h"
