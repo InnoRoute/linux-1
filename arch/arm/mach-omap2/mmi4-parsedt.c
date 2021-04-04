@@ -11,7 +11,7 @@
 #include <linux/of_platform.h>
 #include <linux/gpio.h>
 //#include <plat/gpmc.h>
-#include <omap-gpmc.h>
+#include <linux/omap-gpmc.h>
 #include <linux/platform_data/usb-omap.h>
 //#include <plat/usb.h> 
 #include <linux/i2c.h>
