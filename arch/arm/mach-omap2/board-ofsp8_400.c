@@ -350,77 +350,77 @@ static int ofsp8_400_twl_gpio_setup(struct device *dev,
 
 	return 0;
 }
-static struct twl4030_gpio_platform_data ofsp8_400_twl_gpio_data = {
-	.gpio_base	= OMAP_MAX_GPIO_LINES,
-	.irq_base	= TWL4030_GPIO_IRQ_BASE,
-	.irq_end	= TWL4030_GPIO_IRQ_END,
-	.setup		= ofsp8_400_twl_gpio_setup,
-};
+/*static struct twl4030_gpio_platform_data ofsp8_400_twl_gpio_data = {*/
+/*	.gpio_base	= OMAP_MAX_GPIO_LINES,*/
+/*	.irq_base	= TWL4030_GPIO_IRQ_BASE,*/
+/*	.irq_end	= TWL4030_GPIO_IRQ_END,*/
+/*	.setup		= ofsp8_400_twl_gpio_setup,*/
+/*};*/
 
-static struct twl4030_codec_data ofsp8_400_twl_codec_data = {	
-};
+/*static struct twl4030_codec_data ofsp8_400_twl_codec_data = {	*/
+/*};*/
 
-static struct twl4030_audio_data ofsp8_400_twl_audio_data = {
-	.audio_mclk = 19200000,
-	.codec = &ofsp8_400_twl_codec_data,
-};
+/*static struct twl4030_audio_data ofsp8_400_twl_audio_data = {*/
+/*	.audio_mclk = 19200000,*/
+/*	.codec = &ofsp8_400_twl_codec_data,*/
+/*};*/
 
-static struct regulator_init_data ofsp8_400_twl_vmmc1_data = {
-	.constraints = {
-		.min_uV			= 1850000,
-		.max_uV			= 3150000,
-		.valid_modes_mask	= REGULATOR_MODE_NORMAL
-					| REGULATOR_MODE_STANDBY,
-		.valid_ops_mask		= REGULATOR_CHANGE_VOLTAGE
-					| REGULATOR_CHANGE_MODE
-					| REGULATOR_CHANGE_STATUS,
-	},
-	.num_consumer_supplies	= ARRAY_SIZE(ofsp8_400_twl_vmmc1_supplies),
-	.consumer_supplies	= ofsp8_400_twl_vmmc1_supplies,
-};
-
-
-
-/* VSIM for MMC1 pins DAT4..DAT7 (2 mA, plus card == max 50 mA) */
-static struct regulator_init_data ofsp8_400_twl_vsim_data = {
-	.constraints = {
-		.min_uV			= 1800000,
-		.max_uV			= 3000000,
-		.valid_modes_mask	= REGULATOR_MODE_NORMAL
-					| REGULATOR_MODE_STANDBY,
-		.valid_ops_mask		= REGULATOR_CHANGE_VOLTAGE
-					| REGULATOR_CHANGE_MODE
-					| REGULATOR_CHANGE_STATUS,
-	},
-	.num_consumer_supplies	= ARRAY_SIZE(ofsp8_400_twl_vsim_supply),
-	.consumer_supplies	= ofsp8_400_twl_vsim_supply,
-};
+/*static struct regulator_init_data ofsp8_400_twl_vmmc1_data = {*/
+/*	.constraints = {*/
+/*		.min_uV			= 1850000,*/
+/*		.max_uV			= 3150000,*/
+/*		.valid_modes_mask	= REGULATOR_MODE_NORMAL*/
+/*					| REGULATOR_MODE_STANDBY,*/
+/*		.valid_ops_mask		= REGULATOR_CHANGE_VOLTAGE*/
+/*					| REGULATOR_CHANGE_MODE*/
+/*					| REGULATOR_CHANGE_STATUS,*/
+/*	},*/
+/*	.num_consumer_supplies	= ARRAY_SIZE(ofsp8_400_twl_vmmc1_supplies),*/
+/*	.consumer_supplies	= ofsp8_400_twl_vmmc1_supplies,*/
+/*};*/
 
 
-static struct regulator_init_data custom3_twl_vio_data = {		
-       .constraints = {
-               .min_uV                 = 1800000,
-               .max_uV                 = 1850000,
-               .valid_modes_mask       = REGULATOR_MODE_NORMAL
-                                       | REGULATOR_MODE_STANDBY,
-               .valid_ops_mask         = REGULATOR_CHANGE_VOLTAGE
-                                       | REGULATOR_CHANGE_MODE
-                                       | REGULATOR_CHANGE_STATUS,
-       },
-       .num_consumer_supplies  = ARRAY_SIZE(custom3_twl_vio_supplies),
-       .consumer_supplies      = custom3_twl_vio_supplies,
-};
+
+/*/* VSIM for MMC1 pins DAT4..DAT7 (2 mA, plus card == max 50 mA) */*/
+/*static struct regulator_init_data ofsp8_400_twl_vsim_data = {*/
+/*	.constraints = {*/
+/*		.min_uV			= 1800000,*/
+/*		.max_uV			= 3000000,*/
+/*		.valid_modes_mask	= REGULATOR_MODE_NORMAL*/
+/*					| REGULATOR_MODE_STANDBY,*/
+/*		.valid_ops_mask		= REGULATOR_CHANGE_VOLTAGE*/
+/*					| REGULATOR_CHANGE_MODE*/
+/*					| REGULATOR_CHANGE_STATUS,*/
+/*	},*/
+/*	.num_consumer_supplies	= ARRAY_SIZE(ofsp8_400_twl_vsim_supply),*/
+/*	.consumer_supplies	= ofsp8_400_twl_vsim_supply,*/
+/*};*/
 
 
-/* Devices on I2C bus */
+/*static struct regulator_init_data custom3_twl_vio_data = {		*/
+/*       .constraints = {*/
+/*               .min_uV                 = 1800000,*/
+/*               .max_uV                 = 1850000,*/
+/*               .valid_modes_mask       = REGULATOR_MODE_NORMAL*/
+/*                                       | REGULATOR_MODE_STANDBY,*/
+/*               .valid_ops_mask         = REGULATOR_CHANGE_VOLTAGE*/
+/*                                       | REGULATOR_CHANGE_MODE*/
+/*                                       | REGULATOR_CHANGE_STATUS,*/
+/*       },*/
+/*       .num_consumer_supplies  = ARRAY_SIZE(custom3_twl_vio_supplies),*/
+/*       .consumer_supplies      = custom3_twl_vio_supplies,*/
+/*};*/
 
-static struct twl4030_platform_data ofsp8_400_twldata = {
-	.gpio		= &ofsp8_400_twl_gpio_data,
-	.audio		= &ofsp8_400_twl_audio_data,
-	.vmmc1		= &ofsp8_400_twl_vmmc1_data,
-	.vsim     = &ofsp8_400_twl_vsim_data,
-	.vio		= &custom3_twl_vio_data,
-};
+
+/*/* Devices on I2C bus */*/
+
+/*static struct twl4030_platform_data ofsp8_400_twldata = {*/
+/*	.gpio		= &ofsp8_400_twl_gpio_data,*/
+/*	.audio		= &ofsp8_400_twl_audio_data,*/
+/*	.vmmc1		= &ofsp8_400_twl_vmmc1_data,*/
+/*	.vsim     = &ofsp8_400_twl_vsim_data,*/
+/*	.vio		= &custom3_twl_vio_data,*/
+/*};*/
 
 void __init ofsp8_400_i2c_init(void)
 {
