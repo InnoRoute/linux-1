@@ -21,7 +21,7 @@
 #include <linux/platform_data/i2c-gpio.h>
 #include <linux/pwm_backlight.h>
 #include <linux/leds.h>
-#include <linux/i2c/mcp23017.h>
+//#include <linux/i2c/mcp23017.h> need?
 
 extern int g_tsc2007_gpio;
 extern int ofsp8_400_get_tspendown(void);
