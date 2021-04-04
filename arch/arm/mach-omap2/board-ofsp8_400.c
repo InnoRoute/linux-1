@@ -19,7 +19,7 @@
 //#include <linux/i2c-gpio.h>
 #include <linux/platform_data/i2c-gpio.h>
 #include <linux/platform_data/i2c-omap.h>
-//#include <linux/i2c/tsc2007.h>
+#include <linux/platform_data/tsc2007.h>
 
 //#include <linux/i2c/twl.h> // needed?
 #include <linux/platform_data/omap-twl4030.h>

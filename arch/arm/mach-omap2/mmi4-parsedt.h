@@ -12,6 +12,7 @@
 
 //#include <linux/i2c/tsc2007.h>
 //#include <linux/input/qt2160-slider.h>
+#include <linux/platform_data/tsc2007.h>
 #include <linux/interrupt.h>
 #include <linux/input.h>
 
@@ -44,9 +45,8 @@ struct mmi4_can_data{
 
 struct omap2_hsmmc_info* get_omap2_hsmmc_info(struct omap2_hsmmc_info*);
 struct omap_nand_platform_data* get_nand_pdata( struct omap_nand_platform_data* nand );
-int fill_musb_board_data( struct omap_musb_board_data
-		*board_data);
-int fill_usbhs_bdata(struct usbhs_omap_board_data*	board_data);
+int fill_musb_board_data( struct omap_musb_board_data 		*board_data);
+int fill_usbhs_bdata(struct ehci_hcd_omap_platform_data*	board_data);
 int fill_eth_platform_device(struct platform_device *, struct mmi4_eth_data *eth_data);
 int fill_i2c_board_info(struct i2c_board_info *bus_info);
 struct i2c_board_info * get_i2c_devices(struct i2c_board_info *i2c_boardinfo, int bus_id, int *devnum);

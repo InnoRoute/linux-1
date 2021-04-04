@@ -277,7 +277,7 @@ int fill_gpioled_dev( struct platform_device* gpio_led_dev ){
 }
 
 /* EHCI */
-int fill_usbhs_bdata(struct usbhs_omap_board_data* board_data) {
+int fill_usbhs_bdata(struct ehci_hcd_omap_platform_data* board_data) {
 
 if( device_is_enabled("i_enable_ehci")) {
 	get_int_from_dtb("i_usb_reset_gpio", &board_data->reset_gpio_port[0]);
