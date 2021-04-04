@@ -184,8 +184,8 @@ static int __init setup_ethmac(char *str)
 
 static int setup_splash(char *str)
 {
-	ret_splash = simple_strtol(str, NULL, 10);
-	pr_notice("mmi4: Splashscreen is enabled in u-boot");
+/*	ret_splash = simple_strtol(str, NULL, 10);*/
+/*	pr_notice("mmi4: Splashscreen is enabled in u-boot");*/
 	return 0;
 }
 
@@ -196,7 +196,7 @@ static struct platform_device ofsp8_400_audio_device = {
 
 void __init ofsp8_400_audio_init(void)
 {
-	int err;
+/*	int err;
 
 	if( get_audio_dev(&ofsp8_400_audio_device) == NULL )
 		return;
@@ -205,6 +205,7 @@ void __init ofsp8_400_audio_init(void)
 	if (err) {
 		pr_err("%s: Failed to add platform device\n", ofsp8_400_audio_device.name);
 	}
+	*/
 }
 
 struct mmi4_eth_data eth_data = {
@@ -549,38 +550,38 @@ static int lcd_enabled;
 
 static int ofsp8_400_panel_enable_lcd(struct omap_dss_device *dssdev)
 {
-	if (lcd_enabled) {
-		pr_err(VIDEO_DRIVER_NAME ": Cannot enable panel"
-				" while other panel is active!");
-		return -EINVAL;
-	}
+/*	if (lcd_enabled) {*/
+/*		pr_err(VIDEO_DRIVER_NAME ": Cannot enable panel"*/
+/*				" while other panel is active!");*/
+/*		return -EINVAL;*/
+/*	}*/
 
-	++lcd_enabled;
+/*	++lcd_enabled;*/
 
-	gpio_set_value(ofsp8_400_display_info.gpio_dp, 1);
-	gpio_set_value(ofsp8_400_display_info.gpio_bp, 1);
+/*	gpio_set_value(ofsp8_400_display_info.gpio_dp, 1);*/
+/*	gpio_set_value(ofsp8_400_display_info.gpio_bp, 1);*/
 
-	schedule_delayed_work(&dwork, BACKLIGHT_DELAY);
+/*	schedule_delayed_work(&dwork, BACKLIGHT_DELAY);*/
   
 	return 0;
 }
 
 static void ofsp8_400_panel_disable_lcd(struct omap_dss_device *dssdev)
 {
-	struct backlight_device *bl;
+/*	struct backlight_device *bl;*/
 
-	if (!lcd_enabled)
-		pr_warning(VIDEO_DRIVER_NAME ": panel already disabled!\n");
-	else
-		--lcd_enabled;
+/*	if (!lcd_enabled)*/
+/*		pr_warning(VIDEO_DRIVER_NAME ": panel already disabled!\n");*/
+/*	else*/
+/*		--lcd_enabled;*/
 
-	bl = platform_get_drvdata(&ofsp8_400_pwm_bl);
-	if( bl != NULL){
-		bl->props.brightness = 0;
-		bl->ops->update_status(bl);
-  	}
-	gpio_set_value(ofsp8_400_display_info.gpio_dp, 0);
-	gpio_set_value(ofsp8_400_display_info.gpio_bp, 0);
+/*	bl = platform_get_drvdata(&ofsp8_400_pwm_bl);*/
+/*	if( bl != NULL){*/
+/*		bl->props.brightness = 0;*/
+/*		bl->ops->update_status(bl);*/
+/*  	}*/
+/*	gpio_set_value(ofsp8_400_display_info.gpio_dp, 0);*/
+/*	gpio_set_value(ofsp8_400_display_info.gpio_bp, 0);*/
 }
 
 static int ofsp8_400_panel_enable_tv(struct omap_dss_device *dssdev)
@@ -602,54 +603,54 @@ static struct omap_dss_board_info ofsp8_400_dss_data = {
 
 void __init ofsp8_400_display_init(void)
 {
-	int r, disp;
+/*	int r, disp;*/
 
-	if( get_display_info( &ofsp8_400_display_info ) == NULL )
-		return;
+/*	if( get_display_info( &ofsp8_400_display_info ) == NULL )*/
+/*		return;*/
 
-	/* Display without Backlight will crash the kernel so we better check. */
+/*	/* Display without Backlight will crash the kernel so we better check. */*/
 
-	if( ofsp8_400_pwm_init() != 0 )
-		return;
+/*	if( ofsp8_400_pwm_init() != 0 )*/
+/*		return;*/
 
-	lcd_enabled = 0;
-	if ( ret_splash == 0 ) {
-                r = gpio_request(ofsp8_400_display_info.gpio_dp, "DISP_POW");
-	        if (r < 0) {
-		        pr_err(VIDEO_DRIVER_NAME ": Unable to get DISP_POW GPIO\n");
-		        return;
-	        }
+/*	lcd_enabled = 0;*/
+/*	if ( ret_splash == 0 ) {*/
+/*                r = gpio_request(ofsp8_400_display_info.gpio_dp, "DISP_POW");*/
+/*	        if (r < 0) {*/
+/*		        pr_err(VIDEO_DRIVER_NAME ": Unable to get DISP_POW GPIO\n");*/
+/*		        return;*/
+/*	        }*/
 
-	        r = gpio_request(ofsp8_400_display_info.gpio_bp, "BKL_POW");
-	        if (r < 0) {
-	        	pr_err(VIDEO_DRIVER_NAME ": Unable to get BKL_POW GPIO\n");
-	        	goto err_bkl_pow;
-	        }
-	        gpio_direction_output(ofsp8_400_display_info.gpio_dp, 0);
-	        gpio_direction_output(ofsp8_400_display_info.gpio_bp, 0);
-        }
+/*	        r = gpio_request(ofsp8_400_display_info.gpio_bp, "BKL_POW");*/
+/*	        if (r < 0) {*/
+/*	        	pr_err(VIDEO_DRIVER_NAME ": Unable to get BKL_POW GPIO\n");*/
+/*	        	goto err_bkl_pow;*/
+/*	        }*/
+/*	        gpio_direction_output(ofsp8_400_display_info.gpio_dp, 0);*/
+/*	        gpio_direction_output(ofsp8_400_display_info.gpio_bp, 0);*/
+/*        }*/
 
-	for (disp = 0; disp < ARRAY_SIZE(mmi4_dss_devices); disp++) {
-		if (mmi4_dss_devices[disp]->type == OMAP_DISPLAY_TYPE_VENC) {
-			/* Analog Video */
-			mmi4_dss_devices[disp]->platform_disable=
-				ofsp8_400_panel_disable_tv;
-			mmi4_dss_devices[disp]->platform_enable =
-				ofsp8_400_panel_enable_tv;
-		} else {
-			/* LCD */
-			mmi4_dss_devices[disp]->platform_disable=
-				ofsp8_400_panel_disable_lcd;
-			mmi4_dss_devices[disp]->platform_enable =
-				ofsp8_400_panel_enable_lcd;
-		}
-	}
+/*	for (disp = 0; disp < ARRAY_SIZE(mmi4_dss_devices); disp++) {*/
+/*		if (mmi4_dss_devices[disp]->type == OMAP_DISPLAY_TYPE_VENC) {*/
+/*			/* Analog Video */*/
+/*			mmi4_dss_devices[disp]->platform_disable=*/
+/*				ofsp8_400_panel_disable_tv;*/
+/*			mmi4_dss_devices[disp]->platform_enable =*/
+/*				ofsp8_400_panel_enable_tv;*/
+/*		} else {*/
+/*			/* LCD */*/
+/*			mmi4_dss_devices[disp]->platform_disable=*/
+/*				ofsp8_400_panel_disable_lcd;*/
+/*			mmi4_dss_devices[disp]->platform_enable =*/
+/*				ofsp8_400_panel_enable_lcd;*/
+/*		}*/
+/*	}*/
 
-	omap_display_init(&ofsp8_400_dss_data);
-return;
+/*	omap_display_init(&ofsp8_400_dss_data);*/
+/*return;*/
 
-err_bkl_pow:
-	gpio_free(ofsp8_400_display_info.gpio_dp);
+/*err_bkl_pow:*/
+/*	gpio_free(ofsp8_400_display_info.gpio_dp);*/
 }
 
 /* CAN controller */
