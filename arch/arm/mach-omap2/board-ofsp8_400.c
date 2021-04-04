@@ -412,7 +412,7 @@ static int ofsp8_400_twl_gpio_setup(struct device *dev,
 /*};*/
 
 
-/*/* Devices on I2C bus */*/
+/*// Devices on I2C bus */
 
 /*static struct twl4030_platform_data ofsp8_400_twldata = {*/
 /*	.gpio		= &ofsp8_400_twl_gpio_data,*/
@@ -510,15 +510,15 @@ void __init ofsp8_400_i2c_init(void)
 /*};*/
 
 static void ofsp8_400_pwm_switchon(struct work_struct *work){
-	struct backlight_device *bl;
-	
-	bl = platform_get_drvdata(&ofsp8_400_pwm_bl);
-	if( bl != NULL){
-		bl->props.brightness = 255;
-		bl->ops->update_status(bl);
-	}
-	else
-		pr_err(VIDEO_DRIVER_NAME ": Cannot enable backlight pwm\n");
+/*	struct backlight_device *bl;*/
+/*	*/
+/*	bl = platform_get_drvdata(&ofsp8_400_pwm_bl);*/
+/*	if( bl != NULL){*/
+/*		bl->props.brightness = 255;*/
+/*		bl->ops->update_status(bl);*/
+/*	}*/
+/*	else*/
+/*		pr_err(VIDEO_DRIVER_NAME ": Cannot enable backlight pwm\n");*/
 }
 
 struct delayed_work dwork;
@@ -527,19 +527,19 @@ static int __init ofsp8_400_pwm_init(void)
 {
 	int tmp;
 	
-	if( get_pwm_pdev(&ofsp8_400_pwm_bl) == NULL )
-		return -ENODEV;
+/*	if( get_pwm_pdev(&ofsp8_400_pwm_bl) == NULL )*/
+/*		return -ENODEV;*/
 
-	if ( ret_splash == 0 ) {
-		ofsp8_400_pwm_bl_data.dft_brightness = 0;
-	}
-		
-	tmp = platform_device_register(&ofsp8_400_pwm_bl);
-	if ( tmp )
-	    pr_err("BACKLIGHT: Unable to add platform device\n");
-	
-	INIT_DELAYED_WORK(&dwork, ofsp8_400_pwm_switchon);
-	
+/*	if ( ret_splash == 0 ) {*/
+/*		ofsp8_400_pwm_bl_data.dft_brightness = 0;*/
+/*	}*/
+/*		*/
+/*	tmp = platform_device_register(&ofsp8_400_pwm_bl);*/
+/*	if ( tmp )*/
+/*	    pr_err("BACKLIGHT: Unable to add platform device\n");*/
+/*	*/
+/*	INIT_DELAYED_WORK(&dwork, ofsp8_400_pwm_switchon);*/
+/*	*/
 	return tmp;
 }
 
