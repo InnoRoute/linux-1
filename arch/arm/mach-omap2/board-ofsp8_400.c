@@ -381,7 +381,7 @@ static int ofsp8_400_twl_gpio_setup(struct device *dev,
 
 
 
-/*/* VSIM for MMC1 pins DAT4..DAT7 (2 mA, plus card == max 50 mA) */*/
+/*// VSIM for MMC1 pins DAT4..DAT7 (2 mA, plus card == max 50 mA) */
 /*static struct regulator_init_data ofsp8_400_twl_vsim_data = {*/
 /*	.constraints = {*/
 /*		.min_uV			= 1800000,*/
@@ -471,43 +471,43 @@ void __init ofsp8_400_i2c_init(void)
 
 /* MUSB */
 
-static struct omap_musb_board_data ofsp8_400_musb_board_data = {
-	.interface_type         = MUSB_INTERFACE_ULPI,
-	.mode                   = MUSB_HOST,
-	.power                  = 500,
-	.extvbus                = 1,
-};
+/*static struct omap_musb_board_data ofsp8_400_musb_board_data = {*/
+/*	.interface_type         = MUSB_INTERFACE_ULPI,*/
+/*	.mode                   = MUSB_HOST,*/
+/*	.power                  = 500,*/
+/*	.extvbus                = 1,*/
+/*};*/
 
-/* EHCI USB */
+/*// EHCI USB */
 
-static struct usbhs_omap_platform_data usbhs_bdata __initdata = {
+/*static struct usbhs_omap_platform_data usbhs_bdata __initdata = {*/
 
-	.port_mode[0] = OMAP_EHCI_PORT_MODE_PHY,
-	.port_mode[1] = OMAP_USBHS_PORT_MODE_UNUSED,
-	.port_mode[2] = OMAP_USBHS_PORT_MODE_UNUSED,
+/*	.port_mode[0] = OMAP_EHCI_PORT_MODE_PHY,*/
+/*	.port_mode[1] = OMAP_USBHS_PORT_MODE_UNUSED,*/
+/*	.port_mode[2] = OMAP_USBHS_PORT_MODE_UNUSED,*/
 
-	.phy_reset  = true,
-	.reset_gpio_port[0]  = USB_GPIO_RESET,
-	.reset_gpio_port[1]  = -EINVAL,
-	.reset_gpio_port[2]  = -EINVAL
-};
+/*	.phy_reset  = true,*/
+/*	.reset_gpio_port[0]  = USB_GPIO_RESET,*/
+/*	.reset_gpio_port[1]  = -EINVAL,*/
+/*	.reset_gpio_port[2]  = -EINVAL*/
+/*};*/
 
-/* BACKLIGHT PWM */
+/*// BACKLIGHT PWM */
 
-static struct platform_pwm_backlight_data ofsp8_400_pwm_bl_data = {
-	.pwm_id		= 0,
-	.max_brightness	= 255,
-	.dft_brightness	= 255,
-	/* 0x4C4B400=5000000 ns = 5000 ms ^= 200 Hz */
-	.pwm_period_ns	= 0x4C4B40,
-};
+/*static struct platform_pwm_backlight_data ofsp8_400_pwm_bl_data = {*/
+/*	.pwm_id		= 0,*/
+/*	.max_brightness	= 255,*/
+/*	.dft_brightness	= 255,*/
+/*	// 0x4C4B400=5000000 ns = 5000 ms ^= 200 Hz */
+/*	.pwm_period_ns	= 0x4C4B40,*/
+/*};*/
 
-static struct platform_device ofsp8_400_pwm_bl = {
-	.name	= "pwm-backlight",
-	.dev	= {
-		.platform_data	= &ofsp8_400_pwm_bl_data,
-	}
-};
+/*static struct platform_device ofsp8_400_pwm_bl = {*/
+/*	.name	= "pwm-backlight",*/
+/*	.dev	= {*/
+/*		.platform_data	= &ofsp8_400_pwm_bl_data,*/
+/*	}*/
+/*};*/
 
 static void ofsp8_400_pwm_switchon(struct work_struct *work){
 	struct backlight_device *bl;
