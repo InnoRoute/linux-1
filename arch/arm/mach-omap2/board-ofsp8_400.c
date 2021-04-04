@@ -479,7 +479,7 @@ static struct omap_musb_board_data ofsp8_400_musb_board_data = {
 
 /* EHCI USB */
 
-static struct usbhs_omap_board_data usbhs_bdata __initdata = {
+static struct usbhs_omap_platform_data usbhs_bdata __initdata = {
 
 	.port_mode[0] = OMAP_EHCI_PORT_MODE_PHY,
 	.port_mode[1] = OMAP_USBHS_PORT_MODE_UNUSED,
