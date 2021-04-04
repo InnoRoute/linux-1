@@ -10,7 +10,7 @@
 #ifndef __ARCH_ARM_MMI4_PARSEDT_H__
 #define __ARCH_ARM_MMI4_PARSEDT_H__
 
-#include <linux/i2c/tsc2007.h>
+//#include <linux/i2c/tsc2007.h>
 #include <linux/input/qt2160-slider.h>
 #include <linux/interrupt.h>
 #include <linux/input.h>
