@@ -28,7 +28,7 @@
 #include <linux/usb/otg.h>
 #include <linux/can/platform/sja1000.h>
 #include <linux/pwm_backlight.h>
-#include <linux/input/qt2160-slider.h>
+//#include <linux/input/qt2160-slider.h>
 
 #include <linux/mtd/mtd.h>
 #include <linux/mtd/nand.h>
