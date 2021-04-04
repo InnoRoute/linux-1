@@ -50,7 +50,7 @@
 //#include <video/omapdss.h>
 //#include <video/omap-panel-generic-dpi.h>
 //#include <plat/gpmc.h>
-#include <linux/platform_data/omap-gpmc.h>
+#include <linux/platform_data/gpmc-omap.h>
 //#include <plat/nand.h>
 #include <linux/platform_data/mtd-nand-omap2.h>
 //#include <plat/mmc.h>
