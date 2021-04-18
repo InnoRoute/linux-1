@@ -217,7 +217,7 @@
 &mmc3 {
 	status = "disabled";
 };
-@twl4030-usb {
+&twl4030-usb {
 	compatible = "ti,twl4030-usb";
 	interrupts = < 10 4 >;
 	usb1v5-supply = <&vusb1v5>;
