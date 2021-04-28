@@ -944,7 +944,7 @@ static void mux_ue_pinctrl(void){
 
 	dn = of_find_node_by_name(NULL, "ue_pinctrl");
 	if( dn != NULL ){
-		printf( "mmi4: Pinmuxing according to ue_pinctrl from device tree\n");
+		printk( "mmi4: Pinmuxing according to ue_pinctrl from device tree\n");
 		for_each_property_of_node(dn, pp){
 			if(strncmp( pp->name, "pin_", 4 ) == 0){
 				pinmuxregval = 0;
@@ -965,7 +965,7 @@ static void mux_ue_pinctrl(void){
 static void __init ofsp8_400_init(void)
 {
 	if( ! of_find_node_by_path("/") ){
-		printf( "mmi4: No dtb found. Using OFSP8 defaults for pinmux and hwconfig.\n");
+		printk( "mmi4: No dtb found. Using OFSP8 defaults for pinmux and hwconfig.\n");
 	//	omap3_mux_init(board_mux_default, OMAP_PACKAGE_CUS);
 	}
 	else{
