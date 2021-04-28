@@ -965,7 +965,7 @@ static void mux_ue_pinctrl(void){
 static void __init ofsp8_400_init(void)
 {
 	if( ! of_find_node_by_path("/") ){
-		printf( "mmi4: No dtb found. Using OFSP8 defaults for pinmux and hwconfig.\n");
+		printf( "mmi4: No dtb found. Using OFSP8 defaults for pinmux and hwconfig.\n")
 	//	omap3_mux_init(board_mux_default, OMAP_PACKAGE_CUS);
 	}
 	else{
