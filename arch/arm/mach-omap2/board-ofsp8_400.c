@@ -955,7 +955,7 @@ static void mux_ue_pinctrl(void){
 					of_property_read_string_index( dn, pp->name, i, &of_val );
 					pinmuxregval |= ofmux2reg( of_val );
 				}
-				//printk( KERN_INFO "Muxing ue_pinctrl %s as %s with type 0x%x\n", pp->name, pinmuxname, pinmuxregval );
+				printk( KERN_INFO "Muxing ue_pinctrl %s as %s with type 0x%x\n", pp->name, pinmuxname, pinmuxregval );
 				omap_mux_init_signal(pinmuxname, pinmuxregval);
 			}
 		}
@@ -965,7 +965,7 @@ static void mux_ue_pinctrl(void){
 static void __init ofsp8_400_init(void)
 {
 	if( ! of_find_node_by_path("/") ){
-		printf( "mmi4: No dtb found. Using OFSP8 defaults for pinmux and hwconfig.\n")
+		printf( "mmi4: No dtb found. Using OFSP8 defaults for pinmux and hwconfig.\n");
 	//	omap3_mux_init(board_mux_default, OMAP_PACKAGE_CUS);
 	}
 	else{
