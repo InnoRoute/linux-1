@@ -73,7 +73,7 @@
 static int ret_splash = 0;
 
 static const char *omap3_boards_compat[] __initdata = {
-	"ti,omap3",
+	"ti,omap3-mmi4",
 	NULL,
 };
 
@@ -944,7 +944,7 @@ static void mux_ue_pinctrl(void){
 
 	dn = of_find_node_by_name(NULL, "ue_pinctrl");
 	if( dn != NULL ){
-		printk( "mmi4: Pinmuxing according to ue_pinctrl from device tree\n");
+		printk(KERN_INFO "mmi4: Pinmuxing according to ue_pinctrl from device tree\n");
 		for_each_property_of_node(dn, pp){
 			if(strncmp( pp->name, "pin_", 4 ) == 0){
 				pinmuxregval = 0;
@@ -965,7 +965,7 @@ static void mux_ue_pinctrl(void){
 static void __init ofsp8_400_init(void)
 {
 	if( ! of_find_node_by_path("/") ){
-		printk( "mmi4: No dtb found. Using OFSP8 defaults for pinmux and hwconfig.\n");
+		printk(KERN_INFO "mmi4: No dtb found. Using OFSP8 defaults for pinmux and hwconfig.\n");
 	//	omap3_mux_init(board_mux_default, OMAP_PACKAGE_CUS);
 	}
 	else{
@@ -1000,7 +1000,7 @@ static void __init ofsp8_400_init(void)
 __setup("ethaddr=", setup_ethmac);
 __setup("splash_enabled=", setup_splash);
 
-MACHINE_START(OMAP3_OFSP8_KERNEL400, "Ultratronik OFSP8 Rev.400 and higher")
+DT_MACHINE_START(OMAP3_OFSP8_KERNEL400, "Ultratronik OFSP8 Rev.400 and higher")
 	.atag_offset	= 0x100,
 	.map_io		= omap3_map_io,
 	.reserve	= omap_reserve,
