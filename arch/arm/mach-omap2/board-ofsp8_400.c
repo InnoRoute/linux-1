@@ -56,6 +56,7 @@
 #include <linux/platform_data/mtd-nand-omap2.h>
 //#include <plat/mmc.h>
 #include <linux/platform_data/mmc-omap.h>
+#include <linux/omap-gpmc.h>
 //#include <plat/usb.h>
 //#include <linux/platform_data/usb-omap.h>
 #include <linux/fb.h>
