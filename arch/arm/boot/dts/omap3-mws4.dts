@@ -217,6 +217,13 @@
 &mmc3 {
 	status = "disabled";
 };
+
+ne2000: ethernet@200000 {
+	compatible = "national,ne2000";
+	reg = <0x200000 32>;
+	interrupts = <17 0>;
+	national,dcr = <0x48>;
+};
 /*&twl4030-usb {*/
 /*	compatible = "ti,twl4030-usb";*/
 /*	interrupts = < 10 4 >;*/
