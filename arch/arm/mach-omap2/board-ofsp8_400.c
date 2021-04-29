@@ -967,10 +967,10 @@ static void __init ofsp8_400_init(void)
 {printk(KERN_ERR "ofsp8_400_init.\n");
 	if( ! of_find_node_by_path("/") ){
 		printk(KERN_INFO "mmi4: No dtb found. Using OFSP8 defaults for pinmux and hwconfig.\n");
-		omap3_mux_init(board_mux_default, OMAP_PACKAGE_CUS);
+		//omap3_mux_init(board_mux_default, OMAP_PACKAGE_CUS);
 	}
 	else{
-		omap3_mux_init(board_mux, OMAP_PACKAGE_CUS);
+		//omap3_mux_init(board_mux, OMAP_PACKAGE_CUS);
 		/* Currently (kernel 3.4) the pinctrl module of dt is not 
 		 * yet working, so doing muxing our own way: */
 		mux_ue_pinctrl();
