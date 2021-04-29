@@ -35,7 +35,7 @@
 
 #define	BUZZER			132
 
-//#define MACH_TYPE_OMAP3_OFSP8_KERNEL400 6660
+#define MACH_TYPE_OMAP3_OFSP8_KERNEL400 6660
 
 int g_tsc2007_gpio = 167;
 
