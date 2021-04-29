@@ -73,7 +73,7 @@
 static int ret_splash = 0;
 
 static const char *omap3_boards_compat[] __initdata = {
-	"ti,omap3-mmi4",
+	"ti,omap3",
 	NULL,
 };
 
@@ -1000,7 +1000,7 @@ static void __init ofsp8_400_init(void)
 __setup("ethaddr=", setup_ethmac);
 __setup("splash_enabled=", setup_splash);
 
-DT_MACHINE_START(OMAP3_OFSP8_KERNEL400, "Ultratronik OFSP8 Rev.400 and higher")
+MACHINE_START(OMAP3_OFSP8_KERNEL400, "Ultratronik OFSP8 Rev.400 and higher")
 	.atag_offset	= 0x100,
 	.map_io		= omap3_map_io,
 	.reserve	= omap_reserve,
