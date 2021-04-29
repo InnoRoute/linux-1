@@ -217,60 +217,60 @@ struct mmi4_eth_data eth_data = {
 
 void __init ofsp8_400_eth_init(void)
 {
-/*	int err;*/
-/*	unsigned long cs_mem_base;*/
-/*	if(fill_eth_platform_device(&ofsp8_400_eth_device, &eth_data))*/
-/*		return;*/
+	int err;
+	unsigned long cs_mem_base;
+	if(fill_eth_platform_device(&ofsp8_400_eth_device, &eth_data))
+		return;
 
-/*	 ax88796 driver does not support clk-framework, so clk_get
+	/* ax88796 driver does not support clk-framework, so clk_get
 	  and clk_enable should be called here. But as this is
 	  called before clk-initialization this is not possible.
 	  So we relay on other hardware to keep l3_clk alive.
 	 */
 
-/*	err = gpio_request(eth_data.irq_gpio, ETH_DRIVER_NAME " irq");*/
-/*	if (err) {*/
-/*		pr_err("%s: Failed to request GPIO%d for IRQ\n", ofsp8_400_eth_device.name,*/
-/*				eth_data.irq_gpio);*/
-/*		goto err_req_gpio_irq;*/
-/*	}*/
-/*	gpio_direction_input(eth_data.irq_gpio);*/
-/*        if ( eth_data.fifo_gpio > 0 )*/
-/*	        err = gpio_request(eth_data.fifo_gpio, ETH_DRIVER_NAME " fifo");*/
-/*        else*/
-/*                pr_notice ("Ethernet FIFO GPIO is not defined\n");*/
-/*	if (err) {*/
-/*		pr_err("%s: Failed to request GPIO%d for "*/
-/*				"FIFO-select\n", ofsp8_400_eth_device.name,*/
-/*				eth_data.fifo_gpio);*/
-/*		goto err_req_gpio_fifo;*/
-/*	}*/
-/*        if ( eth_data.fifo_gpio > 0 )*/
-/*	        gpio_direction_output(eth_data.fifo_gpio, 0);*/
+	err = gpio_request(eth_data.irq_gpio, ETH_DRIVER_NAME " irq");
+	if (err) {
+		pr_err("%s: Failed to request GPIO%d for IRQ\n", ofsp8_400_eth_device.name,
+				eth_data.irq_gpio);
+		goto err_req_gpio_irq;
+	}
+	gpio_direction_input(eth_data.irq_gpio);
+        if ( eth_data.fifo_gpio > 0 )
+	        err = gpio_request(eth_data.fifo_gpio, ETH_DRIVER_NAME " fifo");
+        else
+                pr_notice ("Ethernet FIFO GPIO is not defined\n");
+	if (err) {
+		pr_err("%s: Failed to request GPIO%d for "
+				"FIFO-select\n", ofsp8_400_eth_device.name,
+				eth_data.fifo_gpio);
+		goto err_req_gpio_fifo;
+	}
+        if ( eth_data.fifo_gpio > 0 )
+	        gpio_direction_output(eth_data.fifo_gpio, 0);
 
-/*	ofsp8_400_eth_device.resource[2].start = gpio_to_irq(eth_data.irq_gpio);*/
-/*	ofsp8_400_eth_device.resource[2].end =	gpio_to_irq(eth_data.irq_gpio);*/
+	ofsp8_400_eth_device.resource[2].start = gpio_to_irq(eth_data.irq_gpio);
+	ofsp8_400_eth_device.resource[2].end =	gpio_to_irq(eth_data.irq_gpio);
 
-/*	gpmc_cs_request(eth_data.cs, SZ_16M, &cs_mem_base);*/
+	gpmc_cs_request(eth_data.cs, SZ_16M, &cs_mem_base);
 
-/*	ofsp8_400_eth_device.resource[0].start = cs_mem_base;*/
-/*	ofsp8_400_eth_device.resource[0].end = cs_mem_base + (0x18 << 1) - 1;*/
-/*	ofsp8_400_eth_device.resource[1].start = cs_mem_base + (0x1f << 1);*/
-/*	ofsp8_400_eth_device.resource[1].end = cs_mem_base + (0x20 << 1) - 1;*/
+	ofsp8_400_eth_device.resource[0].start = cs_mem_base;
+	ofsp8_400_eth_device.resource[0].end = cs_mem_base + (0x18 << 1) - 1;
+	ofsp8_400_eth_device.resource[1].start = cs_mem_base + (0x1f << 1);
+	ofsp8_400_eth_device.resource[1].end = cs_mem_base + (0x20 << 1) - 1;
 
-/*	err = platform_device_register(&ofsp8_400_eth_device);*/
-/*	if (err) {*/
-/*		pr_err("%s: Failed to add platform device\n", ETH_DRIVER_NAME);*/
-/*		goto err_pdev;*/
-/*	}*/
+	err = platform_device_register(&ofsp8_400_eth_device);
+	if (err) {
+		pr_err("%s: Failed to add platform device\n", ETH_DRIVER_NAME);
+		goto err_pdev;
+	}
 
-/*	return;*/
+	return;
 
-/*err_pdev:*/
-/*	gpio_free(eth_data.fifo_gpio);*/
-/*err_req_gpio_fifo:*/
-/*	gpio_free(eth_data.irq_gpio);*/
-/*err_req_gpio_irq:*/
+err_pdev:
+	gpio_free(eth_data.fifo_gpio);
+err_req_gpio_fifo:
+	gpio_free(eth_data.irq_gpio);
+err_req_gpio_irq:
 	return;
 }
 
@@ -982,7 +982,7 @@ static void __init ofsp8_400_init(void)
 //	omap_serial_init();
 //	omap_sdrc_init(NULL, NULL);
 //	ofsp8_400_audio_init();
-//	ofsp8_400_eth_init();
+	ofsp8_400_eth_init();
 //	ofsp8_400_can_init();
 
 /*	if(! fill_musb_board_data(&ofsp8_400_musb_board_data))
