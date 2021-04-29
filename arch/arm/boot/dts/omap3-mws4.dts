@@ -170,7 +170,12 @@
 		pin_163 = "uart3_cts_rctx.gpio_163", "IEN", "PTD", "DIS"; /* II2 Reset */
 		pin_26 = "etk_d12.gpio_26", "IEN", "PTD", "DIS"; /* RS232 Reset */
 	};
-
+	ne2000: ethernet@200000 {
+		compatible = "national,ne2000";
+		reg = <0x200000 32>;
+		interrupts = <17 0>;
+		national,dcr = <0x48>;
+	};
 };
 
 &omap3_pmx_core {
@@ -218,12 +223,9 @@
 	status = "disabled";
 };
 
-ne2000: ethernet@200000 {
-	compatible = "national,ne2000";
-	reg = <0x200000 32>;
-	interrupts = <17 0>;
-	national,dcr = <0x48>;
-};
+
+
+
 /*&twl4030-usb {*/
 /*	compatible = "ti,twl4030-usb";*/
 /*	interrupts = < 10 4 >;*/
