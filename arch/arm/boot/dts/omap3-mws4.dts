@@ -237,33 +237,7 @@ netcard: AX88796BLI@ffdf0000 {
 	};
 };
 
-/*&i2c4 {*/
-/*	clock-frequency = <2600000>;*/
 
-/*	twl: twl@48 {*/
-/*		reg = <0x48>;*/
-/*		interrupts = <7>; /* SYS_NIRQ cascaded to intc */*/
-/*		interrupt-parent = <&intc>;*/
-
-/*//		twl_audio: audio {*/
-/*//			compatible = "ti,twl4030-audio";*/
-/*//			codec {*/
-/*//			};*/
-/*//		};*/
-/*		twl_power: power {*/
-/*			compatible = "ti,twl4030-power";*/
-/*			ti,use_poweroff;*/
-/*		};*/
-/*		usb:twl4030-usb {*/
-/*	compatible = "ti,twl4030-usb";*/
-/*//	interrupts = < 10 4 >;*/
-/*//	usb1v5-supply = <&vusb1v5>;*/
-/*//	usb1v8-supply = <&vusb1v8>;*/
-/*//	usb3v1-supply = <&vusb3v1>;*/
-/*	usb_mode = <1>;*/
-/*};		*/
-/*	};*/
-/*};*/
 
 #include "twl4030.dtsi"
 #include "twl4030_omap3.dtsi"
