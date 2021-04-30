@@ -42,7 +42,7 @@ static struct platform_driver ax88796_dt_platform_driver = {
         },
 };
 MODULE_DEVICE_TABLE(of, match_table);
-module_param_string(of_id, of_device_id match_table[0].compatible, 128, 0);
+module_param_string(of_id, match_table[0].compatible, 128, 0);
 MODULE_PARM_DESC(of_id, "Openfirmware id of the device to be handled by uio");
 
 module_platform_driver(ax88796_dt_platform_driver);
