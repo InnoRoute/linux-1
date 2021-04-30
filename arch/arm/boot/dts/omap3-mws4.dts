@@ -57,8 +57,18 @@
 			gpios = <&gpio5 21 GPIO_ACTIVE_HIGH>; /* 149 -> D7 LED */
 			linux,default-trigger = "mmc0";
 		};
+		
+		
 	};
-
+	
+netcard: my_device@ffdf0000 {
+    compatible = "ax88796_dt";
+    reg = <0xffdf0000 0x1000> 
+    /* 
+     * reg = address of device and size 
+     * (Minimum is System's Pagesize = 0x1000 Byte in my case
+     */
+};
 	
 	hwconfig {
 		i_enable_mmc = <1>;
@@ -220,14 +230,7 @@
 	status = "disabled";
 };
 
-my_device@ffdf0000 {
-    compatible = "ax88796_dt";
-    reg = <0xffdf0000 0x1000> 
-    /* 
-     * reg = address of device and size 
-     * (Minimum is System's Pagesize = 0x1000 Byte in my case
-     */
-};
+
 
 
 /*&twl4030-usb {*/
