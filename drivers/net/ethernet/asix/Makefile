@@ -1,3 +1,3 @@
 
 
-obj-$(CONFIG_AX88796_DT) += ax88796_dt.o
+obj-$(CONFIG_AX88796DT) += ax88796_dt.o
