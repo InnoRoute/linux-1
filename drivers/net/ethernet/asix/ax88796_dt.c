@@ -50,13 +50,11 @@ static struct of_device_id match_table[] = {
      {0}
 };
 int fill_eth_platform_device(struct platform_device *eth_plat_dev, struct mmi4_eth_data *eth_data) {
-if( device_is_enabled("i_enable_eth")) {
-	get_int_from_dtb("i_eth_irq_gpio", &eth_data->irq_gpio);
-	get_int_from_dtb("i_eth_cs", &eth_data->cs);
-	get_int_from_dtb("i_eth_fifo_gpio", &eth_data->fifo_gpio);
+	eth_data->irq_gpio=130;
+	eth_data->cs=4;
+	eth_data->fifo_gpio=0;
 	return 0;
-} else
-	return -ENODATA;
+
 }
 static int __init setup_ethmac(char *str)
 {
