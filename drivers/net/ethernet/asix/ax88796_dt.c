@@ -146,7 +146,7 @@ err_req_gpio_fifo:
 err_req_gpio_irq:
 	return;
 }
-static __init ax88796_dt_probe(struct platform_device *dev)
+static int ax88796_dt_probe(struct platform_device *dev)
 {
 //        struct uio_info *uioinfo;
         struct resource *r = &dev->resource[0];
