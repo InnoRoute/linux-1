@@ -71,7 +71,6 @@ netcard: AX88796BLI@ffdf0000 {
 };
 
 	watchdog: watchdog {
-		/* ADM706 */
 		compatible = "linux,wdt-gpio";
 		gpios = <&gpio3 21 GPIO_ACTIVE_LOW>;
 		hw_algo = "toggle";
@@ -219,7 +218,14 @@ netcard: AX88796BLI@ffdf0000 {
 			compatible = "ti,twl4030-power";
 			ti,use_poweroff;
 		};
-				
+		usb:twl4030-usb {
+	compatible = "ti,twl4030-usb";
+	interrupts = < 10 4 >;
+	usb1v5-supply = <&vusb1v5>;
+	usb1v8-supply = <&vusb1v8>;
+	usb3v1-supply = <&vusb3v1>;
+	usb_mode = <1>;
+};		
 	};
 };
 
@@ -241,14 +247,7 @@ netcard: AX88796BLI@ffdf0000 {
 
 
 
-/*&twl4030-usb {*/
-/*	compatible = "ti,twl4030-usb";*/
-/*	interrupts = < 10 4 >;*/
-/*	usb1v5-supply = <&vusb1v5>;*/
-/*	usb1v8-supply = <&vusb1v8>;*/
-/*	usb3v1-supply = <&vusb3v1>;*/
-/*	usb_mode = <1>;*/
-/*};*/
+
 /*twl4030-usb {*/
 /*	compatible = "ti,twl4030-usb";*/
 /*	interrupts = < 10 4 >;*/
