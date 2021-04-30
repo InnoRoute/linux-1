@@ -7,6 +7,7 @@
 #include <net/ax88796.h>
 #include <linux/platform_data/gpmc-omap.h>
 #include <linux/omap-gpmc.h>
+#include <linux/gpio.h>
 
 #define	ETH_GPIO_IRQ		130
 #define	ETH_GPIO_FIFO		131
