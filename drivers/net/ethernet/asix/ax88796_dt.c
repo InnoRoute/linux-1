@@ -16,6 +16,7 @@ static int ax88796_dt_probe(struct platform_device *dev)
         uioinfo->name = dev->dev.of_node->name /* name from device tree: "my_device" */
         uioinfo->mem[0].addr = r->start; /* device address from device tree */
         uioinfo->mem[0].size = resource_size(r); /* size from device tree */
+        printk(KERN_ERR "moep!\n");
 }
 
 static int ax88796_dt_remove(struct platform_device *dev){
