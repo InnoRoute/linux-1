@@ -21,6 +21,7 @@ static int ax88796_dt_probe(struct platform_device *dev)
 //        uioinfo->mem[0].addr = r->start; /* device address from device tree */
 //        uioinfo->mem[0].size = resource_size(r); /* size from device tree */
         printk(KERN_ERR "moep!\n");
+        printk(KERN_ERR "name:%s addr:0x%llx size:%i\n",dev->dev.of_node->name,r->start,resource_size(r));
      return 0;
 }
 
