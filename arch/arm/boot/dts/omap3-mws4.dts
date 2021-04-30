@@ -204,6 +204,12 @@ netcard: AX88796BLI@ffdf0000 {
 &i2c1 {
 	clock-frequency = <2600000>;
 
+
+};
+
+#include "twl4030.dtsi"
+#include "twl4030_omap3.dtsi"
+
 	twl: twl@48 {
 		reg = <0x48>;
 		interrupts = <7>; /* SYS_NIRQ cascaded to intc */
@@ -227,10 +233,7 @@ netcard: AX88796BLI@ffdf0000 {
 	usb_mode = <1>;
 };		
 	};
-};
 
-#include "twl4030.dtsi"
-#include "twl4030_omap3.dtsi"
 &mmc1 {
 	vmmc-supply = <&vmmc1>;
 	vqmmc-supply = <&vsim>;
