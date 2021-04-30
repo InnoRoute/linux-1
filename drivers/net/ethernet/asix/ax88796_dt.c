@@ -1,5 +1,9 @@
 #include <linux/init.h>
 #include <linux/module.h>
+#include <linux/platform_device.h>
+#include <linux/of.h>
+#include <linux/of_platform.h>
+#include <linux/of_address.h>
     
 
 static struct of_device_id match_table[] = {
@@ -10,13 +14,14 @@ static struct of_device_id match_table[] = {
 };
 static int ax88796_dt_probe(struct platform_device *dev)
 {
-        struct uio_info *uioinfo;
+//        struct uio_info *uioinfo;
         struct resource *r = &dev->resource[0];
         
-        uioinfo->name = dev->dev.of_node->name /* name from device tree: "my_device" */
-        uioinfo->mem[0].addr = r->start; /* device address from device tree */
-        uioinfo->mem[0].size = resource_size(r); /* size from device tree */
-        printk(KERN_ERR "moep!\n")
+//        uioinfo->name = dev->dev.of_node->name /* name from device tree: "my_device" */
+//        uioinfo->mem[0].addr = r->start; /* device address from device tree */
+//        uioinfo->mem[0].size = resource_size(r); /* size from device tree */
+        printk(KERN_ERR "moep!\n");
+     return 0;
 }
 
 static int ax88796_dt_remove(struct platform_device *dev){
