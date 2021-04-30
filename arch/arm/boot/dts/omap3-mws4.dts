@@ -18,7 +18,7 @@
 
 / {
 	model = "Ultratronik BFS MWS4";
-	compatible = "ti,omap3-mmi4","ti,omap3450", "ti,omap3";
+	compatible = "ti,omap3-mmi4", "ti,omap3";
 
 //	cpus {
 //		cpu@0 {
