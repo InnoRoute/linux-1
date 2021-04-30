@@ -52,7 +52,7 @@ static struct of_device_id match_table[] = {
      },
      {0}
 };
-int fill_eth_platform_device(struct platform_device *eth_plat_dev, struct mmi4_eth_data *eth_data) {
+int fill_platform_device(struct platform_device *eth_plat_dev, struct mmi4_eth_data *eth_data) {
 	eth_data->irq_gpio=130;
 	eth_data->cs=4;
 	eth_data->fifo_gpio=0;
@@ -92,7 +92,7 @@ void __init ofsp8_400_eth_init(void)
 {
 	int err;
 	unsigned long cs_mem_base;
-	if(fill_eth_platform_device(&ofsp8_400_eth_device, &eth_data))
+	if(fill_platform_device(&ofsp8_400_eth_device, &eth_data))
 		return;
 
 	/* ax88796 driver does not support clk-framework, so clk_get
