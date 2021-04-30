@@ -8,7 +8,7 @@
  * published by the Free Software Foundation.
  */
 /dts-v1/;
-
+// pinnumbering: https://siliconbladeconsultants.com/2020/07/08/pinmux-for-beaglebone-black-am335x-and-osd335x/
 //#include "omap34xx.dtsi"
 #include "am3703.dtsi"
 #define OMAP3_CONTROL_PADCONF_SDMMC1_DAT4_OFFSET		0x120
@@ -43,18 +43,18 @@
 		compatible = "gpio-leds";
 		pmu_stat {
 			label = "beagleboard::pmu_stat";
-			gpios = <&twl_gpio 19 GPIO_ACTIVE_HIGH>; /* LEDB */
+			gpios = <&gpio 102 GPIO_ACTIVE_HIGH>; /* LEDB */
 		};
 
 		heartbeat {
 			label = "beagleboard::usr0";
-			gpios = <&gpio5 22 GPIO_ACTIVE_HIGH>; /* 150 -> D6 LED */
+			gpios = <&gpio 103 GPIO_ACTIVE_HIGH>; /* 150 -> D6 LED */
 			linux,default-trigger = "heartbeat";
 		};
 
 		mmc {
 			label = "beagleboard::usr1";
-			gpios = <&gpio5 21 GPIO_ACTIVE_HIGH>; /* 149 -> D7 LED */
+			gpios = <&gpio 104 GPIO_ACTIVE_HIGH>; /* 149 -> D7 LED */
 			linux,default-trigger = "mmc0";
 		};
 		
@@ -69,6 +69,14 @@ netcard: AX88796BLI@ffdf0000 {
      * (Minimum is System's Pagesize = 0x1000 Byte in my case
      */
 };
+
+	watchdog: watchdog {
+		/* ADM706 */
+		compatible = "linux,wdt-gpio";
+		gpios = <&gpio3 21 GPIO_ACTIVE_LOW>;
+		hw_algo = "toggle";
+		hw_margin_ms = <1600>;
+	};
 	
 	hwconfig {
 		i_enable_mmc = <1>;
