@@ -177,8 +177,10 @@ my_device@ffdf0000 {
      * reg = address of device and size 
      * (Minimum is System's Pagesize = 0x1000 Byte in my case
      */
-}
 };
+};
+
+
 
 &omap3_pmx_core {
 	mmc1_pins: pinmux_mmc1_pins {
