@@ -88,7 +88,7 @@ struct mmi4_eth_data eth_data = {
 	.cs = ETH_CS,
 };
 
-void __init ofsp8_400_eth_init(void)
+void ofsp8_400_eth_init(void)
 {
 	int err;
 	unsigned long cs_mem_base;
@@ -146,7 +146,7 @@ err_req_gpio_fifo:
 err_req_gpio_irq:
 	return;
 }
-static int ax88796_dt_probe(struct platform_device *dev)
+static __init ax88796_dt_probe(struct platform_device *dev)
 {
 //        struct uio_info *uioinfo;
         struct resource *r = &dev->resource[0];
