@@ -210,11 +210,11 @@ void __init ofsp8_400_audio_init(void)
 	*/
 }
 
-struct mmi4_eth_data eth_data = {
-	.irq_gpio = ETH_GPIO_IRQ,
-	.fifo_gpio = ETH_GPIO_FIFO,
-	.cs = ETH_CS,
-};
+/*struct mmi4_eth_data eth_data = {*/
+/*	.irq_gpio = ETH_GPIO_IRQ,*/
+/*	.fifo_gpio = ETH_GPIO_FIFO,*/
+/*	.cs = ETH_CS,*/
+/*};*/
 
 /*void __init ofsp8_400_eth_init(void)*/
 /*{*/
