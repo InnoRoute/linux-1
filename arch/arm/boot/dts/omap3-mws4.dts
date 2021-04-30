@@ -170,14 +170,7 @@
 		pin_163 = "uart3_cts_rctx.gpio_163", "IEN", "PTD", "DIS"; /* II2 Reset */
 		pin_26 = "etk_d12.gpio_26", "IEN", "PTD", "DIS"; /* RS232 Reset */
 	};
-my_device@ffdf0000 {
-    compatible = "ax88796_dt";
-    reg = <0xffdf0000 0x1000> 
-    /* 
-     * reg = address of device and size 
-     * (Minimum is System's Pagesize = 0x1000 Byte in my case
-     */
-};
+
 };
 
 
@@ -227,7 +220,14 @@ my_device@ffdf0000 {
 	status = "disabled";
 };
 
-
+my_device@ffdf0000 {
+    compatible = "ax88796_dt";
+    reg = <0xffdf0000 0x1000> 
+    /* 
+     * reg = address of device and size 
+     * (Minimum is System's Pagesize = 0x1000 Byte in my case
+     */
+};
 
 
 /*&twl4030-usb {*/
