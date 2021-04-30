@@ -4,6 +4,8 @@
 #include <linux/of.h>
 #include <linux/of_platform.h>
 #include <linux/of_address.h>
+#include <net/ax88796.h>
+
 #define	ETH_GPIO_IRQ		130
 #define	ETH_GPIO_FIFO		131
 #define	ETH_DRIVER_NAME		"ax88796"

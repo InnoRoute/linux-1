@@ -61,7 +61,7 @@
 		
 	};
 	
-netcard: my_device@ffdf0000 {
+netcard: AX88796BLI@ffdf0000 {
     compatible = "ax88796_dt";
     reg = <0xffdf0000 0x1000> ;
     /* 
