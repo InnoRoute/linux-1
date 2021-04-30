@@ -63,7 +63,7 @@
 	
 netcard: my_device@ffdf0000 {
     compatible = "ax88796_dt";
-    reg = <0xffdf0000 0x1000> 
+    reg = <0xffdf0000 0x1000> ;
     /* 
      * reg = address of device and size 
      * (Minimum is System's Pagesize = 0x1000 Byte in my case
