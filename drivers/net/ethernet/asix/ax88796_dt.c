@@ -11,7 +11,12 @@
 #define	ETH_DRIVER_NAME		"ax88796"
 #define	ETH_CS			4
 #define	ETH_CS_SIZE		SZ_16M  
-  
+struct mmi4_eth_data{
+	int irq_gpio;
+	int fifo_gpio;
+	int cs;
+};
+
 static struct resource ofsp8_400_eth_resources[] = {
 	{
 		.flags  = IORESOURCE_MEM,
