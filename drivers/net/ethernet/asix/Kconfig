@@ -1,0 +1,6 @@
+config AX88796_DT
+	tristate "AX88796 devicetree support"
+	depends on AX88796
+	---help---
+	  ax88796 devicetree wrapper
+
