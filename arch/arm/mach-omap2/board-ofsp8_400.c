@@ -74,7 +74,6 @@
 static int ret_splash = 0;
 
 static const char *omap3_boards_compat[] __initdata = {
-	"ti,omap3-mmi4",
 	"ti,omap3",
 	NULL,
 };
