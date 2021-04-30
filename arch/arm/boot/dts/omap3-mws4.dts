@@ -8,7 +8,7 @@
  * published by the Free Software Foundation.
  */
 /dts-v1/;
-// pinnumbering: https://siliconbladeconsultants.com/2020/07/08/pinmux-for-beaglebone-black-am335x-and-osd335x/
+// pinnumbering: 32PINS JE BANK
 //#include "omap34xx.dtsi"
 #include "am3703.dtsi"
 #define OMAP3_CONTROL_PADCONF_SDMMC1_DAT4_OFFSET		0x120
@@ -43,18 +43,18 @@
 		compatible = "gpio-leds";
 		pmu_stat {
 			label = "beagleboard::pmu_stat";
-			gpios = <&gpio 102 GPIO_ACTIVE_HIGH>; /* LEDB */
+			gpios = <&gpio3 6 GPIO_ACTIVE_HIGH>; /* LEDB */
 		};
 
 		heartbeat {
 			label = "beagleboard::usr0";
-			gpios = <&gpio 103 GPIO_ACTIVE_HIGH>; /* 150 -> D6 LED */
+			gpios = <&gpio3 7 GPIO_ACTIVE_HIGH>; /* 150 -> D6 LED */
 			linux,default-trigger = "heartbeat";
 		};
 
 		mmc {
 			label = "beagleboard::usr1";
-			gpios = <&gpio 104 GPIO_ACTIVE_HIGH>; /* 149 -> D7 LED */
+			gpios = <&gpio3 8 GPIO_ACTIVE_HIGH>; /* 149 -> D7 LED */
 			linux,default-trigger = "mmc0";
 		};
 		
@@ -75,7 +75,7 @@ netcard: AX88796BLI@ffdf0000 {
 		compatible = "linux,wdt-gpio";
 		gpios = <&gpio3 21 GPIO_ACTIVE_LOW>;
 		hw_algo = "toggle";
-		hw_margin_ms = <1600>;
+		hw_margin_ms = <900>;
 	};
 	
 	hwconfig {
