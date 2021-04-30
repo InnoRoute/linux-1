@@ -209,11 +209,11 @@ netcard: AX88796BLI@ffdf0000 {
 		interrupts = <7>; /* SYS_NIRQ cascaded to intc */
 		interrupt-parent = <&intc>;
 
-		twl_audio: audio {
-			compatible = "ti,twl4030-audio";
-			codec {
-			};
-		};
+//		twl_audio: audio {
+//			compatible = "ti,twl4030-audio";
+//			codec {
+//			};
+//		};
 		twl_power: power {
 			compatible = "ti,twl4030-power";
 			ti,use_poweroff;
