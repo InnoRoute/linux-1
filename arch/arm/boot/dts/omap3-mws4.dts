@@ -13,6 +13,7 @@
 #include "am3703.dtsi"
 #define OMAP3_CONTROL_PADCONF_SDMMC1_DAT4_OFFSET		0x120
 #define OMAP3_CONTROL_PADCONF_GPMC_CLK_OFFSET			0x08e
+#include "twl4030.dtsi"
 
 //omap34xx.dtsi
 
@@ -239,7 +240,7 @@ netcard: AX88796BLI@ffdf0000 {
 
 
 
-#include "twl4030.dtsi"
+
 //#include "twl4030_omap3.dtsi"
 &mmc1 {
 	vmmc-supply = <&vmmc1>;
