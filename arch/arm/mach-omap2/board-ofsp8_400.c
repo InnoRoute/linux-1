@@ -59,6 +59,7 @@
 #include <linux/omap-gpmc.h>
 //#include <plat/usb.h>
 //#include <linux/platform_data/usb-omap.h>
+#include <linux/usb/musb.h>
 #include <linux/fb.h>
 
 #include "mux.h"
