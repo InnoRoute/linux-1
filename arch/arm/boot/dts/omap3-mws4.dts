@@ -238,7 +238,7 @@ netcard: AX88796BLI@ffdf0000 {
 		regulator-max-microvolt  = <1850000>;
 	};
 //MMC1: 1850 <--> 3150 mV at 3150 mV normal standby
- 	vmmc1:twl4030-vmmc1 {
+ 	vmmc1:regulator-vmmc1 {
 		compatible = "ti,twl4030-vmmc1";
 		regulator-min-microvolt  = <1850000>;
 		regulator-max-microvolt  = <3150000>;
