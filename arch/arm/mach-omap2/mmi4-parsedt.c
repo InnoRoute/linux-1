@@ -281,7 +281,7 @@ int fill_usbhs_bdata(struct usbhs_omap_platform_data* board_data) {
 
 if( device_is_enabled("i_enable_ehci")) {
 	get_int_from_dtb("i_usb_reset_gpio", &board_data->reset_gpio_port[0]);
-//	get_int_from_dtb("i_ehci_power", &board_data->power);
+	get_int_from_dtb("i_ehci_power", &board_data->power);
  	return 0;
 } 
 else
