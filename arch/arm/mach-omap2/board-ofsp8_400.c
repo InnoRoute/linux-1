@@ -473,26 +473,26 @@ void __init ofsp8_400_i2c_init(void)
 
 /* MUSB */
 
-/*static struct omap_musb_board_data ofsp8_400_musb_board_data = {*/
-/*	.interface_type         = MUSB_INTERFACE_ULPI,*/
-/*	.mode                   = MUSB_HOST,*/
-/*	.power                  = 500,*/
-/*	.extvbus                = 1,*/
-/*};*/
+static struct omap_musb_board_data ofsp8_400_musb_board_data = {
+	.interface_type         = MUSB_INTERFACE_ULPI,
+	.mode                   = MUSB_HOST,
+	.power                  = 500,
+	.extvbus                = 1,
+};
 
-/*// EHCI USB */
+// EHCI USB 
 
-/*static struct usbhs_omap_platform_data usbhs_bdata __initdata = {*/
+static struct usbhs_omap_platform_data usbhs_bdata __initdata = {
 
-/*	.port_mode[0] = OMAP_EHCI_PORT_MODE_PHY,*/
-/*	.port_mode[1] = OMAP_USBHS_PORT_MODE_UNUSED,*/
-/*	.port_mode[2] = OMAP_USBHS_PORT_MODE_UNUSED,*/
+	.port_mode[0] = OMAP_EHCI_PORT_MODE_PHY,
+	.port_mode[1] = OMAP_USBHS_PORT_MODE_UNUSED,
+	.port_mode[2] = OMAP_USBHS_PORT_MODE_UNUSED,
 
-/*	.phy_reset  = true,*/
-/*	.reset_gpio_port[0]  = USB_GPIO_RESET,*/
-/*	.reset_gpio_port[1]  = -EINVAL,*/
-/*	.reset_gpio_port[2]  = -EINVAL*/
-/*};*/
+	.phy_reset  = true,
+	.reset_gpio_port[0]  = USB_GPIO_RESET,
+	.reset_gpio_port[1]  = -EINVAL,
+	.reset_gpio_port[2]  = -EINVAL
+};
 
 /*// BACKLIGHT PWM */
 
@@ -986,7 +986,7 @@ static void __init ofsp8_400_init(void)
 //	ofsp8_400_eth_init();
 //	ofsp8_400_can_init();
 
-/*	if(! fill_musb_board_data(&ofsp8_400_musb_board_data))
+	if(! fill_musb_board_data(&ofsp8_400_musb_board_data))
 		usb_musb_init(&ofsp8_400_musb_board_data);
 
         if(! fill_usbhs_bdata(&usbhs_bdata)) {
@@ -995,7 +995,7 @@ static void __init ofsp8_400_init(void)
                 }
 		usbhs_init(&usbhs_bdata);
         }
-*/
+
 }
 
 __setup("ethaddr=", setup_ethmac);
