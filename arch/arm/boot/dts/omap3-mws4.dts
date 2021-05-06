@@ -230,11 +230,23 @@ netcard: AX88796BLI@ffdf0000 {
 	vusb3v1: regulator-vusb3v1 {
 		compatible = "ti,twl4030-vusb3v1";
 	};
+//VIO: 1800 <--> 1850 mV at 1800 mV normal standby
+
  	vio:regulator-vio {
 		compatible = "ti,twl4030-vio";
 		regulator-min-microvolt  = <1800000>;
 		regulator-max-microvolt  = <1850000>;
 	};
+//MMC1: 1850 <--> 3150 mV at 3150 mV normal standby
+ 	vmmc1:twl4030-vmmc1 {
+		compatible = "ti,twl4030-vmmc1";
+		regulator-min-microvolt  = <1850000>;
+		regulator-max-microvolt  = <3150000>;
+	};
+//VDAC: 1800 mV normal standby
+//VPLL2: 1800 mV normal standby
+//VSIM: 1800 <--> 3000 mV at 1800 mV normal standby
+	
 		usb2_phy: twl4030-usb {
 		compatible = "ti,twl4030-usb";
 		interrupts = <10>, <4>;
