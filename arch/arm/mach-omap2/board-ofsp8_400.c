@@ -987,15 +987,15 @@ static void __init ofsp8_400_init(void)
 //	ofsp8_400_eth_init();
 //	ofsp8_400_can_init();
 
-	if(! fill_musb_board_data(&ofsp8_400_musb_board_data))
-		usb_musb_init(&ofsp8_400_musb_board_data);
+/*	if(! fill_musb_board_data(&ofsp8_400_musb_board_data))*/
+/*		usb_musb_init(&ofsp8_400_musb_board_data);*/
 
-        if(! fill_usbhs_bdata(&usbhs_bdata)) {
-                if ( usbhs_bdata.reset_gpio_port[0] == 0 ) {
-                        usbhs_bdata.reset_gpio_port[0] = -EINVAL;
-                }
-		usbhs_init(&usbhs_bdata);
-        }
+/*        if(! fill_usbhs_bdata(&usbhs_bdata)) {*/
+/*                if ( usbhs_bdata.reset_gpio_port[0] == 0 ) {*/
+/*                        usbhs_bdata.reset_gpio_port[0] = -EINVAL;*/
+/*                }*/
+/*		usbhs_init(&usbhs_bdata);*/
+/*        }*/
 
 }
 

@@ -21,6 +21,7 @@
 #include <linux/platform_data/i2c-gpio.h>
 #include <linux/pwm_backlight.h>
 #include <linux/leds.h>
+arch/arm/mach-omap2/usb.h
 //#include <linux/i2c/mcp23017.h> need?
 
 extern int g_tsc2007_gpio;
