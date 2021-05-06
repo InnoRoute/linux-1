@@ -219,7 +219,17 @@ netcard: AX88796BLI@ffdf0000 {
 			compatible = "ti,twl4030-power";
 			ti,use_poweroff;
 		};
-		
+		vusb1v5: regulator-vusb1v5 {
+		compatible = "ti,twl4030-vusb1v5";
+	};
+
+	vusb1v8: regulator-vusb1v8 {
+		compatible = "ti,twl4030-vusb1v8";
+	};
+
+	vusb3v1: regulator-vusb3v1 {
+		compatible = "ti,twl4030-vusb3v1";
+	};
 		usb2_phy: twl4030-usb {
 		compatible = "ti,twl4030-usb";
 		//interrupts = <10>, <4>;
