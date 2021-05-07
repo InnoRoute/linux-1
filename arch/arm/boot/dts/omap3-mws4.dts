@@ -70,7 +70,11 @@ netcard: AX88796BLI@ffdf0000 {
      * (Minimum is System's Pagesize = 0x1000 Byte in my case
      */
 };
-
+	hsusb0_phy: hsusb0_phy {
+		compatible = "usb-nop-xceiv";
+//		reset-gpios = <&gpio5 19 GPIO_ACTIVE_LOW>; /* gpio_147 */
+		vcc-supply = <&hsusb0_power>;
+	};
 	watchdog: watchdog {
 		compatible = "linux,wdt-gpio";
 		gpios = <&gpio3 21 GPIO_ACTIVE_LOW>;
