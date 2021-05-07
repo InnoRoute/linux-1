@@ -319,7 +319,14 @@ netcard: AX88796BLI@ffdf0000 {
 		interrupts = <3>;
 		#io-channel-cells = <1>;
 	};
-
+&usbhshost {
+	port1-mode = "ehci-phy";
+	port2-mode = "ehci-tll";
+	port3-mode = "ehci-phy";
+};
+&usbhsehci {
+	phys = <&hsusb1_phy 0 0>;
+};
 /*&usb {*/
 /*    status = "okay";*/
 /*};*/
