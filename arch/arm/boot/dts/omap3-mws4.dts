@@ -370,13 +370,13 @@ netcard: AX88796BLI@ffdf0000 {
 		>;
 	};
 };
-&hsusb1_phy {
-	reset-gpios = <&twl_gpio 6 GPIO_ACTIVE_LOW>;
-};
+/*&hsusb1_phy {*/
+/*	reset-gpios = <&twl_gpio 6 GPIO_ACTIVE_LOW>;*/
+/*};*/
 
-&hsusb2_phy {
-	reset-gpios = <&twl_gpio 7 GPIO_ACTIVE_LOW>;
-};
+/*&hsusb2_phy {*/
+/*	reset-gpios = <&twl_gpio 7 GPIO_ACTIVE_LOW>;*/
+/*};*/
 &usb_otg_hs {
 	pinctrl-names = "default";
 	pinctrl-0 = <&hsusb0_pins>;
