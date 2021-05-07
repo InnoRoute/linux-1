@@ -331,9 +331,9 @@ netcard: AX88796BLI@ffdf0000 {
 /*    status = "okay";*/
 /*};*/
 
-&usb_ctrl_mod {
-    status = "okay";
-};
+/*&usb_ctrl_mod {*/
+/*    status = "okay";*/
+/*};*/
 
 /*&usb0_phy {*/
 /*    status = "okay";*/
