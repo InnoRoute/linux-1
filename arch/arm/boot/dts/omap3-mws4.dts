@@ -202,44 +202,44 @@ netcard: AX88796BLI@ffdf0000 {
 	};
 };
 
-&i2c1 {
-	clock-frequency = <100000>;
+/*&i2c1 {*/
+/*	clock-frequency = <100000>;*/
 
-	twl: twl@48 {
-		reg = <0x48>;
-		interrupts = <7>; //SYS_NIRQ cascaded to intc 
-		interrupt-parent = <&intc>;
-		compatible = "ti,twl4030";
-		
-			usb2_phy:twl4030-usb {
-		compatible = "ti,twl4030-usb";
-		interrupts = <10>, <4>;
-		usb1v5-supply = <&vusb1v5>;
-		usb1v8-supply = <&vusb1v8>;
-		usb3v1-supply = <&vusb3v1>;
-		usb_mode = <1>;
-	};
-		madc1:madc {
-		compatible = "ti,twl4030-madc";
-		interrupts = <3>;
-		#io-channel-cells = <1>;
-	};
-//		twl_audio: audio {
-//			compatible = "ti,twl4030-audio";
-//			codec {
-//			};
-//		};
+/*	twl: twl@48 {*/
+/*		reg = <0x48>;*/
+/*		interrupts = <7>; //SYS_NIRQ cascaded to intc */
+/*		interrupt-parent = <&intc>;*/
+/*		compatible = "ti,twl4030";*/
+/*		*/
+/*			usb2_phy:twl4030-usb {*/
+/*		compatible = "ti,twl4030-usb";*/
+/*		interrupts = <10>, <4>;*/
+/*		usb1v5-supply = <&vusb1v5>;*/
+/*		usb1v8-supply = <&vusb1v8>;*/
+/*		usb3v1-supply = <&vusb3v1>;*/
+/*		usb_mode = <1>;*/
+/*	};*/
+/*		madc1:madc {*/
+/*		compatible = "ti,twl4030-madc";*/
+/*		interrupts = <3>;*/
+/*		#io-channel-cells = <1>;*/
+/*	};*/
+/*//		twl_audio: audio {*/
+/*//			compatible = "ti,twl4030-audio";*/
+/*//			codec {*/
+/*//			};*/
+/*//		};*/
 
-	};
-};
-&i2c2 {
-	clock-frequency = <100000>;
-	rtc8564: rtc8564@51 {
-		compatible = "epson,rtc8564";
-		reg = <0x51>;
-		#clock-cells = <0>;
-	};
-};
+/*	};*/
+/*};*/
+/*&i2c2 {*/
+/*	clock-frequency = <100000>;*/
+/*	rtc8564: rtc8564@51 {*/
+/*		compatible = "epson,rtc8564";*/
+/*		reg = <0x51>;*/
+/*		#clock-cells = <0>;*/
+/*	};*/
+/*};*/
 
 
 
