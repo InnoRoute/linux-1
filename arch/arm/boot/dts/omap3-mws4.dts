@@ -345,8 +345,11 @@ netcard: AX88796BLI@ffdf0000 {
 /*     maximum-speed = "full-speed"; */
 /*};*/
 &usb_otg_hs {
-	interface-type = <1>;
-	mode = <1>;
+	interface-type = <0>;
+	usb-phy = <&usb0_phy>;
+	phys = <&usb0_phy>;
+	phy-names = "usb0-phy";
+	mode = <3>;
 	power = <50>;
 };
 
