@@ -202,7 +202,7 @@ netcard: AX88796BLI@ffdf0000 {
 	};
 };
 
-&i2c3 {
+&i2c1 {
 	clock-frequency = <100000>;
 
 	twl: twl@48 {
