@@ -219,6 +219,11 @@ netcard: AX88796BLI@ffdf0000 {
 		usb3v1-supply = <&vusb3v1>;
 		usb_mode = <1>;
 	};
+		madc1:madc {
+		compatible = "ti,twl4030-madc";
+		interrupts = <3>;
+		#io-channel-cells = <1>;
+	};
 //		twl_audio: audio {
 //			compatible = "ti,twl4030-audio";
 //			codec {
@@ -309,7 +314,7 @@ netcard: AX88796BLI@ffdf0000 {
 		usb3v1-supply = <&vusb3v1>;
 		usb_mode = <1>;
 	};
-	&madc {
+	&madc1 {
 		compatible = "ti,twl4030-madc";
 		interrupts = <3>;
 		#io-channel-cells = <1>;
