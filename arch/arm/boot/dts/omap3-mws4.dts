@@ -202,7 +202,7 @@ netcard: AX88796BLI@ffdf0000 {
 	};
 };
 
-&i2c1 {
+&i2c0 {
 	clock-frequency = <2600000>;
 
 	twl: twl@48 {
@@ -271,14 +271,14 @@ netcard: AX88796BLI@ffdf0000 {
 	};
 	};
 };
-/*&i2c2 {*/
-/*	clock-frequency = <2600000>;*/
-/*	rtc8564: rtc8564@51 {*/
-/*		compatible = "epson,rtc8564";*/
-/*		reg = <0x51>;*/
-/*		#clock-cells = <0>;*/
-/*	};*/
-/*};*/
+&i2c1 {
+	clock-frequency = <2600000>;
+	rtc8564: rtc8564@51 {
+		compatible = "epson,rtc8564";
+		reg = <0x51>;
+		#clock-cells = <0>;
+	};
+};
 
 
 
