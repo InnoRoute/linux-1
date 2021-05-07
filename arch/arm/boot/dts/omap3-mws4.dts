@@ -254,40 +254,40 @@ netcard: AX88796BLI@ffdf0000 {
 		compatible = "ti,twl4030-vusb1v5";
 	};
 
-	&regulator-vusb1v8 {
+	&vusb1v8 {
 		compatible = "ti,twl4030-vusb1v8";
 	};
 
-	&regulator-vusb3v1 {
+	&vusb3v1 {
 		compatible = "ti,twl4030-vusb3v1";
 	};
 //VIO: 1800 <--> 1850 mV at 1800 mV normal standby
 
- 	&regulator-vio {
+ 	&vio {
 		compatible = "ti,twl4030-vio";
 		regulator-min-microvolt  = <1800000>;
 		regulator-max-microvolt  = <1850000>;
 	};
 //MMC1: 1850 <--> 3150 mV at 3150 mV normal standby
- 	&regulator-vmmc1 {
+ 	&vmmc1 {
 		compatible = "ti,twl4030-vmmc1";
 		regulator-min-microvolt  = <1850000>;
 		regulator-max-microvolt  = <3150000>;
 	};
 //VDAC: 1800 mV normal standby
- 	&regulator-vadc {
+ 	&vadc {
 		compatible = "ti,twl4030-vadc";
 		regulator-min-microvolt  = <1800000>;
 		regulator-max-microvolt  = <1800000>;
 	};
 //VPLL2: 1800 mV normal standby
- 	&regulator-vpll2 {
+ 	&vpll2 {
 		compatible = "ti,twl4030-vpll2";
 		regulator-min-microvolt  = <1800000>;
 		regulator-max-microvolt  = <1800000>;
 	};
 //VSIM: 1800 <--> 3000 mV at 1800 mV normal standby
- 	&regulator-vsim {
+ 	&vsim {
 		compatible = "ti,twl4030-vsim";
 		regulator-min-microvolt  = <1800000>;
 		regulator-max-microvolt  = <3000000>;
