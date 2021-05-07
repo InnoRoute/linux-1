@@ -246,10 +246,10 @@ netcard: AX88796BLI@ffdf0000 {
 
 
 
-		&power {
-			compatible = "ti,twl4030-power";
-			ti,use_poweroff;
-		};
+/*		&power {*/
+/*			compatible = "ti,twl4030-power";*/
+/*			ti,use_poweroff;*/
+/*		};*/
 		&regulator-vusb1v5 {
 		compatible = "ti,twl4030-vusb1v5";
 	};
