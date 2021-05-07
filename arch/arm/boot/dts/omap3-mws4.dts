@@ -211,7 +211,7 @@ netcard: AX88796BLI@ffdf0000 {
 		interrupt-parent = <&intc>;
 		compatible = "ti,twl4030";
 		
-			twl4030-usb:twl4030-usb {
+			usb2_phy:twl4030-usb {
 		compatible = "ti,twl4030-usb";
 		interrupts = <10>, <4>;
 		usb1v5-supply = <&vusb1v5>;
@@ -301,7 +301,7 @@ netcard: AX88796BLI@ffdf0000 {
 		regulator-min-microvolt  = <1800000>;
 		regulator-max-microvolt  = <3000000>;
 	};	
-	&twl4030-usb {
+	&usb2_phy {
 		compatible = "ti,twl4030-usb";
 		interrupts = <10>, <4>;
 		usb1v5-supply = <&vusb1v5>;
