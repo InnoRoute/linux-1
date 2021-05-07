@@ -243,13 +243,13 @@ netcard: AX88796BLI@ffdf0000 {
 
 
 
-/*#include "twl4030.dtsi"*/
-/*#include "twl4030_omap3.dtsi"*/
-/*&mmc1 {*/
-/*	vmmc-supply = <&vmmc1>;*/
-/*	vqmmc-supply = <&vsim>;*/
-/*	bus-width = <4>;*/
-/*};*/
+#include "twl4030.dtsi"
+#include "twl4030_omap3.dtsi"
+&mmc1 {
+	vmmc-supply = <&vmmc1>;
+	vqmmc-supply = <&vsim>;
+	bus-width = <4>;
+};
 &mmc2 {
 	status = "disabled";
 };
