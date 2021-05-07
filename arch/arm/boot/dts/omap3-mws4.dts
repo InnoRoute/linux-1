@@ -377,14 +377,16 @@ netcard: AX88796BLI@ffdf0000 {
 /*&hsusb2_phy {*/
 /*	reset-gpios = <&twl_gpio 7 GPIO_ACTIVE_LOW>;*/
 /*};*/
+
+//https://elixir.bootlin.com/linux/latest/source/arch/arm/boot/dts/omap3-cm-t3x30.dtsi#L122
 &usb_otg_hs {
 	pinctrl-names = "default";
 	pinctrl-0 = <&hsusb0_pins>;
-	interface-type = <0>;
+	interface-type = <1>;
 	usb-phy = <&usb2_phy>;
 	phys = <&usb2_phy>;
 	phy-names = "usb2-phy";
-	mode = <3>;
+	mode = <1>;
 	power = <50>;
 };
 
