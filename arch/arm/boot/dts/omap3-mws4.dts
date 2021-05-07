@@ -335,15 +335,15 @@ netcard: AX88796BLI@ffdf0000 {
 /*    status = "okay";*/
 /*};*/
 
-/*&usb0_phy {*/
-/*    status = "okay";*/
-/*};*/
-
-&usb0 {
+&usb0_phy {
     status = "okay";
-    dr_mode = "host";
-     maximum-speed = "full-speed"; 
 };
+
+/*&usb0 {*/
+/*    status = "okay";*/
+/*    dr_mode = "host";*/
+/*     maximum-speed = "full-speed"; */
+/*};*/
 
 
 
