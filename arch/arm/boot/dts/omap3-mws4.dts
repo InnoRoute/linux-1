@@ -325,7 +325,7 @@ netcard: AX88796BLI@ffdf0000 {
 	port3-mode = "ehci-phy";
 };
 &usbhsehci {
-	phys = <&hsusb1_phy 0 0>;
+	phys = <&hsusb0_phy 0 0>;
 };
 /*&usb {*/
 /*    status = "okay";*/
