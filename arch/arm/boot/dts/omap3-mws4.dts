@@ -275,8 +275,8 @@ netcard: AX88796BLI@ffdf0000 {
 		regulator-max-microvolt  = <3150000>;
 	};
 //VDAC: 1800 mV normal standby
- 	&vadc {
-		compatible = "ti,twl4030-vadc";
+ 	&vdac {
+		compatible = "ti,twl4030-vdac";
 		regulator-min-microvolt  = <1800000>;
 		regulator-max-microvolt  = <1800000>;
 	};
