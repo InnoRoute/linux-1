@@ -243,8 +243,8 @@ netcard: AX88796BLI@ffdf0000 {
 
 
 
-#include "twl4030.dtsi"
-#include "twl4030_omap3.dtsi"
+/*#include "twl4030.dtsi"*/
+/*#include "twl4030_omap3.dtsi"*/
 &mmc1 {
 	vmmc-supply = <&vmmc1>;
 	vqmmc-supply = <&vsim>;
@@ -264,61 +264,61 @@ netcard: AX88796BLI@ffdf0000 {
 /*			compatible = "ti,twl4030-power";*/
 /*			ti,use_poweroff;*/
 /*		};*/
-		&vusb1v5 {
-		compatible = "ti,twl4030-vusb1v5";
-	};
+/*		&vusb1v5 {*/
+/*		compatible = "ti,twl4030-vusb1v5";*/
+/*	};*/
 
-	&vusb1v8 {
-		compatible = "ti,twl4030-vusb1v8";
-	};
+/*	&vusb1v8 {*/
+/*		compatible = "ti,twl4030-vusb1v8";*/
+/*	};*/
 
-	&vusb3v1 {
-		compatible = "ti,twl4030-vusb3v1";
-	};
-//VIO: 1800 <--> 1850 mV at 1800 mV normal standby
+/*	&vusb3v1 {*/
+/*		compatible = "ti,twl4030-vusb3v1";*/
+/*	};*/
+/*//VIO: 1800 <--> 1850 mV at 1800 mV normal standby*/
 
- 	&vio {
-		compatible = "ti,twl4030-vio";
-		regulator-min-microvolt  = <1800000>;
-		regulator-max-microvolt  = <1850000>;
-	};
-//MMC1: 1850 <--> 3150 mV at 3150 mV normal standby
- 	&vmmc1 {
-		compatible = "ti,twl4030-vmmc1";
-		regulator-min-microvolt  = <1850000>;
-		regulator-max-microvolt  = <3150000>;
-	};
-//VDAC: 1800 mV normal standby
- 	&vdac {
-		compatible = "ti,twl4030-vdac";
-		regulator-min-microvolt  = <1800000>;
-		regulator-max-microvolt  = <1800000>;
-	};
-//VPLL2: 1800 mV normal standby
- 	&vpll2 {
-		compatible = "ti,twl4030-vpll2";
-		regulator-min-microvolt  = <1800000>;
-		regulator-max-microvolt  = <1800000>;
-	};
-//VSIM: 1800 <--> 3000 mV at 1800 mV normal standby
- 	&vsim {
-		compatible = "ti,twl4030-vsim";
-		regulator-min-microvolt  = <1800000>;
-		regulator-max-microvolt  = <3000000>;
-	};	
-	&usb2_phy {
-		compatible = "ti,twl4030-usb";
-		interrupts = <10>, <4>;
-		usb1v5-supply = <&vusb1v5>;
-		usb1v8-supply = <&vusb1v8>;
-		usb3v1-supply = <&vusb3v1>;
-		usb_mode = <1>;
-	};
-	&madc1 {
-		compatible = "ti,twl4030-madc";
-		interrupts = <3>;
-		#io-channel-cells = <1>;
-	};
+/* 	&vio {*/
+/*		compatible = "ti,twl4030-vio";*/
+/*		regulator-min-microvolt  = <1800000>;*/
+/*		regulator-max-microvolt  = <1850000>;*/
+/*	};*/
+/*//MMC1: 1850 <--> 3150 mV at 3150 mV normal standby*/
+/* 	&vmmc1 {*/
+/*		compatible = "ti,twl4030-vmmc1";*/
+/*		regulator-min-microvolt  = <1850000>;*/
+/*		regulator-max-microvolt  = <3150000>;*/
+/*	};*/
+/*//VDAC: 1800 mV normal standby*/
+/* 	&vdac {*/
+/*		compatible = "ti,twl4030-vdac";*/
+/*		regulator-min-microvolt  = <1800000>;*/
+/*		regulator-max-microvolt  = <1800000>;*/
+/*	};*/
+/*//VPLL2: 1800 mV normal standby*/
+/* 	&vpll2 {*/
+/*		compatible = "ti,twl4030-vpll2";*/
+/*		regulator-min-microvolt  = <1800000>;*/
+/*		regulator-max-microvolt  = <1800000>;*/
+/*	};*/
+/*//VSIM: 1800 <--> 3000 mV at 1800 mV normal standby*/
+/* 	&vsim {*/
+/*		compatible = "ti,twl4030-vsim";*/
+/*		regulator-min-microvolt  = <1800000>;*/
+/*		regulator-max-microvolt  = <3000000>;*/
+/*	};	*/
+/*	&usb2_phy {*/
+/*		compatible = "ti,twl4030-usb";*/
+/*		interrupts = <10>, <4>;*/
+/*		usb1v5-supply = <&vusb1v5>;*/
+/*		usb1v8-supply = <&vusb1v8>;*/
+/*		usb3v1-supply = <&vusb3v1>;*/
+/*		usb_mode = <1>;*/
+/*	};*/
+/*	&madc1 {*/
+/*		compatible = "ti,twl4030-madc";*/
+/*		interrupts = <3>;*/
+/*		#io-channel-cells = <1>;*/
+/*	};*/
 
 /*&usb {*/
 /*    status = "okay";*/
