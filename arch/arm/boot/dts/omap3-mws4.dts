@@ -145,7 +145,7 @@
 	usb-phy = <&usb2_phy>;
 	phys = <&usb2_phy>;
 	phy-names = "usb2-phy";
-	mode = <3>;
+	mode = <1>;
 	power = <50>;
 };
 
