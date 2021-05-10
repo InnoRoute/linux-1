@@ -13,7 +13,7 @@
 #include "omap36xx.dtsi"
 / {
 	model = "Ultratronik BFS MWS4";
-	compatible = "ti,omap3-mmi4", "ti,omap3";
+	compatible = "ti,omap3-mmi4","compulab,omap3-cm-t3730", "ti,omap36xx", "ti,omap3";
 	
 	cpus {
 			cpu@0 {
