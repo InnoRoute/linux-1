@@ -24,6 +24,15 @@
 		device_type = "memory";
 		reg = <0x80000000 0x10000000>; /* 256 MB */
 	};
+	aliases {
+		i2c0 = &i2c1;
+		i2c1 = &i2c2;
+		i2c2 = &i2c3;
+		serial0 = &uart1;
+		serial1 = &uart2;
+		serial2 = &uart3;
+		mmc1 = &mmc1;
+	};
 	netcard: AX88796BLI@ffdf0000 {
     compatible = "ax88796_dt";
     reg = <0xffdf0000 0x1000> ;
