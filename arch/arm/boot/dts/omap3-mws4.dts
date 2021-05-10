@@ -24,16 +24,16 @@
 		device_type = "memory";
 		reg = <0x80000000 0x10000000>; /* 256 MB */
 	};
-		leds {
-		compatible = "gpio-leds";
-		pinctrl-names = "default";
-		pinctrl-0 = <&green_led_pins>;
-		ledb {
-			label = "mws4:green";
-			gpios = <&gpio4 6 GPIO_ACTIVE_HIGH>;  /* gpio102 */
-			linux,default-trigger = "heartbeat";
-		};
-	};
+/*		leds {*/
+/*		compatible = "gpio-leds";*/
+/*		pinctrl-names = "default";*/
+/*		pinctrl-0 = <&green_led_pins>;*/
+/*		ledb {*/
+/*			label = "mws4:green";*/
+/*			gpios = <&gpio4 6 GPIO_ACTIVE_HIGH>;  /* gpio102 */*/
+/*			linux,default-trigger = "heartbeat";*/
+/*		};*/
+/*	};*/
 };
 &omap3_pmx_core {
 	uart3_pins: pinmux_uart3_pins {
