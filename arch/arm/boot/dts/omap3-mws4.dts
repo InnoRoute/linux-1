@@ -30,7 +30,7 @@
 /*		pinctrl-0 = <&green_led_pins>;*/
 /*		ledb {*/
 /*			label = "mws4:green";*/
-/*			gpios = <&gpio4 6 GPIO_ACTIVE_HIGH>;  /* gpio102 */*/
+/*			gpios = <&gpio4 6 GPIO_ACTIVE_HIGH>;  // gpio102 */
 /*			linux,default-trigger = "heartbeat";*/
 /*		};*/
 /*	};*/
