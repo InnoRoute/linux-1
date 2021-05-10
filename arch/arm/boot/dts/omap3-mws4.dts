@@ -46,6 +46,14 @@
 //		reg = <0x2c>;
 		reset-gpios = <&gpio1 4 GPIO_ACTIVE_LOW>;
 	};
+		hsusb1_phy: hsusb1_phy {
+		status = "disabled";
+	};
+
+	/* HS USB Host PHY on PORT 2 */
+	hsusb2_phy: hsusb2_phy {
+		status = "disabled";
+	};
 /*		leds {*/
 /*		compatible = "gpio-leds";*/
 /*		pinctrl-names = "default";*/
@@ -97,14 +105,7 @@
 		>;
 	};
 };
-	hsusb1_phy: hsusb1_phy {
-		status = "disabled";
-	};
 
-	/* HS USB Host PHY on PORT 2 */
-	hsusb2_phy: hsusb2_phy {
-		status = "disabled";
-	};
 &i2c1 {
 	pinctrl-names = "default";
 	pinctrl-0 = <&i2c1_pins>;
