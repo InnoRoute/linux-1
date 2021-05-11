@@ -41,6 +41,10 @@
      //(Minimum is System's Pagesize = 0x1000 Byte in my case
 
 };
+	wd: MAX6373@ffdf0000 {
+    compatible = "max6373_dt";
+    reg = <0xffdf0000 0x1000> ;
+ };
 	usb2512b@2c {
 		compatible = "microchip,usb2517";
 //		reg = <0x2c>;
