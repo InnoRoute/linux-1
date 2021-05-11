@@ -20,11 +20,7 @@ static struct of_device_id match_table[] = {
      },
      {0}
 };
-int fill_platform_device(struct platform_device *plat_dev) {
 
-	return 0;
-
-}
 
 
 
