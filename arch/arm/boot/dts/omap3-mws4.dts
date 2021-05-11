@@ -9,6 +9,7 @@
  */
 /dts-v1/;
 // pinnumbering: 32PINS JE BANK
+//https://github.com/Moxa-Linux/BIOS-UC-8200_source_code/blob/master/arch/arm/include/asm/arch-omap3/mux.h fuer addressen
 //https://elixir.bootlin.com/linux/latest/source/arch/arm/boot/dts/omap3-cm-t3730.dts
 #include "omap36xx.dtsi"
 / {
@@ -41,10 +42,13 @@
      //(Minimum is System's Pagesize = 0x1000 Byte in my case
 
 };
-	wd: MAX6373@ffdf0000 {
-    compatible = "max6373_dt";
-    reg = <0xffdf0000 0x1000> ;
- };
+	watchdog_max: watchdog {
+		/* ADM706 */
+		compatible = "linux,wdt-gpio";
+//		gpios = <&gpio3 21 GPIO_ACTIVE_LOW>;
+		hw_algo = "toggle";
+		hw_margin_ms = <900>;
+	};
 	usb2512b@2c {
 		compatible = "microchip,usb2517";
 //		reg = <0x2c>;
@@ -89,6 +93,11 @@
 			OMAP3_CORE1_IOPAD(0x214e, PIN_INPUT_PULLUP | MUX_MODE0)	/* sdmmc1_dat3.sdmmc1_dat3 */
 		>;
 	};
+	wd_pins: pinmux_wd_pins {
+		pinctrl-single,pins = <
+			OMAP3_CORE1_IOPAD(0x213E, PIN_OUTPUT | MUX_MODE0)	/* CONTROL_PADCONF_MCBSP2_CLKX	0x013E */
+		>;
+	};
 	i2c1_pins: pinmux_i2c1_pins {
 		pinctrl-single,pins = <
 			OMAP3_CORE1_IOPAD(0x21ba, PIN_INPUT_PULLUP | MUX_MODE0)	/* i2c1_scl */
@@ -112,7 +121,10 @@
 		>;
 	};
 };
+&watchdog_max{
+	gpios=<&wd_pins>;
 
+}
 &i2c1 {
 	pinctrl-names = "default";
 	pinctrl-0 = <&i2c1_pins>;
