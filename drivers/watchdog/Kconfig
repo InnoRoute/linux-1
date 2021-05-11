@@ -683,6 +683,11 @@ config MAX63XX_WATCHDOG
 	select WATCHDOG_CORE
 	help
 	  Support for memory mapped max63{69,70,71,72,73,74} watchdog timer.
+config MAX6373_WATCHDOG_DT
+	tristate "Max6373 watchdog devicetree support"
+	depends on MAX63XX_WATCHDOG
+	help
+	  Support for devicetree mapped max6373 watchdog timer.
 
 config MAX77620_WATCHDOG
 	tristate "Maxim Max77620 Watchdog Timer"
