@@ -44,7 +44,7 @@
 };
 	watchdog_max: watchdog {
 		compatible = "linux,wdt-gpio";
-		gpios = <&gpio2 21 GPIO_ACTIVE_LOW>;
+		gpios = <&gpio4 21 GPIO_ACTIVE_LOW>;
 		hw_algo = "toggle";
 		always-running;
 		hw_margin_ms = <900>;
@@ -52,7 +52,7 @@
 	usb2512b@2c {
 		compatible = "microchip,usb2517";
 //		reg = <0x2c>;
-		reset-gpios = <&gpio4 4 GPIO_ACTIVE_LOW>;
+		reset-gpios = <&gpio1 4 GPIO_ACTIVE_LOW>;
 	};
 		hsusb1_phy: hsusb1_phy {
 		status = "disabled";
