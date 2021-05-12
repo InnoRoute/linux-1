@@ -14,13 +14,6 @@
 
 
 
-static struct of_device_id match_table[] = {
-     {
-             .compatible = "max6373_dt",
-     },
-     {0}
-};
-
 
 
 

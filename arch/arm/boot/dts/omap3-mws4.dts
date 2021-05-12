@@ -42,9 +42,18 @@
      //(Minimum is System's Pagesize = 0x1000 Byte in my case
 
 };
+
+/*	watchdog_max: max6373_dt@ffdf0000 {*/
+/*    compatible = "max6373_dt";*/
+/*    reg = <0xffdf0000 0x1000> ;*/
+/* */
+/*     //reg = address of device and size */
+/*     //(Minimum is System's Pagesize = 0x1000 Byte in my case*/
+
+/*};*/
 	watchdog_max: watchdog {
 		compatible = "linux,wdt-gpio";
-		gpios = <&gpio4 21 1>; //117
+//		gpios = <&gpio4 0 21 1>; //117
 		hw_algo = "toggle";
 //		always-running;
 		hw_margin_ms = <900>;
@@ -152,11 +161,15 @@ leds {
 	};
 	
 };
+&gpio4{
 
-/*&watchdog_max{*/
-/*	gpios=<&wd_pins>;*/
+phandle = < 0x0a>;
+}
 
-/*};*/
+&watchdog_max{
+	gpios = <0x0a  0 21 1>; //117
+
+};
 &gpio1{
 gpio-ranges=<&omap3_pmx_core 0 32>;
 
