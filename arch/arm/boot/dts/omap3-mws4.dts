@@ -167,7 +167,7 @@ phandle = < 0x0a>;
 };
 
 &watchdog_max{
-	gpios = <0x0a 21 1>; //117
+	gpios = <&gpio4 21 1>; //117
 
 };
 &gpio1{
