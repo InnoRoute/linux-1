@@ -132,9 +132,9 @@ leds {
 	};
 	led_pins: pinmux_led_pins {
 		pinctrl-single,pins = <
-			OMAP3_CORE1_IOPAD(0x211c, PIN_INPUT_PULLUP | MUX_MODE4)	/* gpio102*/
-			OMAP3_CORE1_IOPAD(0x211e, PIN_INPUT_PULLUP | MUX_MODE4)	/* gpio103 */
-			OMAP3_CORE1_IOPAD(0x2120, PIN_INPUT_PULLUP | MUX_MODE4)	/* gpio103 */
+			OMAP3_CORE1_IOPAD(0x211c, PIN_OUTPUT | MUX_MODE4)	/* gpio102*/
+			OMAP3_CORE1_IOPAD(0x211e, PIN_OUTPUT | MUX_MODE4)	/* gpio103 */
+			OMAP3_CORE1_IOPAD(0x2120, PIN_OUTPUT | MUX_MODE4)	/* gpio103 */
 		>;
 	};
 	
