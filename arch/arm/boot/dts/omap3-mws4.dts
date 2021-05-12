@@ -42,6 +42,15 @@
      //(Minimum is System's Pagesize = 0x1000 Byte in my case
 
 };
+leds {
+		compatible = "gpio-leds";
+
+		heartbeat {
+			label = "mws4::usr0";
+			gpios = <&gpio4 6 GPIO_ACTIVE_HIGH>; /* 102 -> D6 LED */
+			linux,default-trigger = "heartbeat";
+		};
+	};
 	watchdog_max: watchdog {
 		compatible = "linux,wdt-gpio";
 		gpios = <&gpio3 21 GPIO_ACTIVE_LOW>;
@@ -126,30 +135,30 @@
 /*	gpios=<&wd_pins>;*/
 
 /*};*/
-&gpio1{
-gpio-ranges=<&omap3_pmx_core 0 32>;
+/*&gpio1{*/
+/*gpio-ranges=<&omap3_pmx_core 0 32>;*/
 
-};
-&gpio2{
-gpio-ranges=<&omap3_pmx_core 32 32>;
+/*};*/
+/*&gpio2{*/
+/*gpio-ranges=<&omap3_pmx_core 32 32>;*/
 
-};
-&gpio3{
-gpio-ranges=<&omap3_pmx_core 64 32>;
+/*};*/
+/*&gpio3{*/
+/*gpio-ranges=<&omap3_pmx_core 64 32>;*/
 
-};
-&gpio4{
-gpio-ranges=<&omap3_pmx_core 96 32>;
+/*};*/
+/*&gpio4{*/
+/*gpio-ranges=<&omap3_pmx_core 96 32>;*/
 
-};
-&gpio5{
-gpio-ranges=<&omap3_pmx_core 128 32>;
+/*};*/
+/*&gpio5{*/
+/*gpio-ranges=<&omap3_pmx_core 128 32>;*/
 
-};
-&gpio6{
-gpio-ranges=<&omap3_pmx_core 160 32>;
+/*};*/
+/*&gpio6{*/
+/*gpio-ranges=<&omap3_pmx_core 160 32>;*/
 
-};
+/*};*/
 &i2c1 {
 	pinctrl-names = "default";
 	pinctrl-0 = <&i2c1_pins>;
