@@ -44,7 +44,7 @@
 };
 	watchdog_max: watchdog {
 		compatible = "linux,wdt-gpio";
-		gpios = <&gpio4 21 GPIO_ACTIVE_LOW>; //117
+		gpios = <&gpio4 21 1>; //117
 		hw_algo = "toggle";
 //		always-running;
 		hw_margin_ms = <900>;
