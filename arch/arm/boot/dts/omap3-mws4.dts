@@ -52,7 +52,7 @@
 	usb2512b@2c {
 		compatible = "microchip,usb2517";
 //		reg = <0x2c>;
-		reset-gpios = <&gpio1 4 GPIO_ACTIVE_LOW>;
+		reset-gpios = <&gpio1 27 GPIO_ACTIVE_LOW>;
 	};
 		hsusb1_phy: hsusb1_phy {
 		status = "disabled";
@@ -69,7 +69,7 @@ leds {
 		led_sm {
 			label = "led_sm";
 			gpios = <&gpio4 5 GPIO_ACTIVE_HIGH>; /* 101 */
-			linux,default-trigger = "cpu";
+			
 		};
 		led1 {
 			label = "led1";
@@ -141,6 +141,13 @@ leds {
 			OMAP3_CORE1_IOPAD(0x211c, PIN_OUTPUT | MUX_MODE4)	/* gpio102*/
 			OMAP3_CORE1_IOPAD(0x211e, PIN_OUTPUT | MUX_MODE4)	/* gpio103 */
 			OMAP3_CORE1_IOPAD(0x2120, PIN_OUTPUT | MUX_MODE4)	/* gpio103 */
+		>;
+	};
+		gpio_pins: pinmux_gpio_pins {
+		pinctrl-single,pins = <
+			OMAP3_CORE1_IOPAD(0x2122, PIN_INPUT | MUX_MODE4)	/* gpio105 spontanmeldung*/
+			OMAP3_CORE1_IOPAD(0x212c, PIN_OUTPUT | MUX_MODE4)	/* gpio110 usb2_en*/
+
 		>;
 	};
 	
