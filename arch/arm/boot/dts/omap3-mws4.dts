@@ -161,15 +161,9 @@ leds {
 	};
 	
 };
-&gpio4{
 
-phandle = < 0x0a>;
-};
 
-&watchdog_max{
-	gpios = <&gpio4 21 1>; //117
 
-};
 &gpio1{
 gpio-ranges=<&omap3_pmx_core 0 32>;
 
@@ -192,6 +186,10 @@ gpio-ranges=<&omap3_pmx_core 128 32>;
 };
 &gpio6{
 gpio-ranges=<&omap3_pmx_core 160 32>;
+
+};
+&watchdog_max{
+	gpios = <&gpio4 21 1>; //117
 
 };
 &i2c1 {
