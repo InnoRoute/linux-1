@@ -130,6 +130,26 @@
 gpio-ranges=<&omap3_pmx_core 0 32>;
 
 };
+&gpio2{
+gpio-ranges=<&omap3_pmx_core 32 32>;
+
+};
+&gpio3{
+gpio-ranges=<&omap3_pmx_core 64 32>;
+
+};
+&gpio4{
+gpio-ranges=<&omap3_pmx_core 96 32>;
+
+};
+&gpio5{
+gpio-ranges=<&omap3_pmx_core 128 32>;
+
+};
+&gpio6{
+gpio-ranges=<&omap3_pmx_core 160 32>;
+
+};
 &i2c1 {
 	pinctrl-names = "default";
 	pinctrl-0 = <&i2c1_pins>;
