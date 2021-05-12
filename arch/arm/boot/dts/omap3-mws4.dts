@@ -43,10 +43,10 @@
 
 };
 	watchdog_max: watchdog {
-		/* ADM706 */
 		compatible = "linux,wdt-gpio";
 //		gpios = <&gpio3 21 GPIO_ACTIVE_LOW>;
 		hw_algo = "toggle";
+		always-running;
 		hw_margin_ms = <900>;
 	};
 	usb2512b@2c {
@@ -95,7 +95,7 @@
 	};
 	wd_pins: pinmux_wd_pins {
 		pinctrl-single,pins = <
-			OMAP3_CORE1_IOPAD(0x213E, PIN_OUTPUT | MUX_MODE0)	/* CONTROL_PADCONF_MCBSP2_CLKX	0x013E */
+			OMAP3_CORE1_IOPAD(0x013E, PIN_OUTPUT | MUX_MODE0)	/* CONTROL_PADCONF_MCBSP2_CLKX	0x013E */
 		>;
 	};
 	i2c1_pins: pinmux_i2c1_pins {
