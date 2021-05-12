@@ -44,7 +44,7 @@
 };
 	watchdog_max: watchdog {
 		compatible = "linux,wdt-gpio";
-		gpios = <&gpio3 21 GPIO_ACTIVE_LOW>;
+		gpios = <&gpio4 21 GPIO_ACTIVE_LOW>; //117
 		hw_algo = "toggle";
 		always-running;
 		hw_margin_ms = <900>;
@@ -66,20 +66,25 @@ leds {
 		compatible = "gpio-leds";
 		pinctrl-names = "default";
 		pinctrl-0 = <&led_pins>;
+		led_sm {
+			label = "led_sm";
+			gpios = <&gpio4 5 GPIO_ACTIVE_HIGH>; /* 101 */
+			linux,default-trigger = "cpu";
+		};
 		led1 {
 			label = "led1";
-			gpios = <&gpio4 6 GPIO_ACTIVE_HIGH>; /* 102 -> D6 LED */
-			linux,default-trigger = "heartbeat";
+			gpios = <&gpio4 6 GPIO_ACTIVE_HIGH>; /* 102 */
+			linux,default-trigger = "cpu";
 		};
 		led2 {
 			label = "led2";
-			gpios = <&gpio4 7 GPIO_ACTIVE_HIGH>; /* 102 -> D6 LED */
-			linux,default-trigger = "disk-activity";
+			gpios = <&gpio4 7 GPIO_ACTIVE_HIGH>; /* 103 */
+			linux,default-trigger = "mmc0";
 		};
 		led3 {
 			label = "led3";
-			gpios = <&gpio4 8 GPIO_ACTIVE_HIGH>; /* 102 -> D6 LED */
-			linux,default-trigger = "default-on";
+			gpios = <&gpio4 8 GPIO_ACTIVE_HIGH>; /* 104 */
+			linux,default-trigger = "usb-host";
 		};
 	};
 };
@@ -132,6 +137,7 @@ leds {
 	};
 	led_pins: pinmux_led_pins {
 		pinctrl-single,pins = <
+			OMAP3_CORE1_IOPAD(0x211a, PIN_OUTPUT | MUX_MODE4)	/* gpio101*/
 			OMAP3_CORE1_IOPAD(0x211c, PIN_OUTPUT | MUX_MODE4)	/* gpio102*/
 			OMAP3_CORE1_IOPAD(0x211e, PIN_OUTPUT | MUX_MODE4)	/* gpio103 */
 			OMAP3_CORE1_IOPAD(0x2120, PIN_OUTPUT | MUX_MODE4)	/* gpio103 */
