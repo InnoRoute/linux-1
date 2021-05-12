@@ -139,10 +139,10 @@ leds {
 	
 };
 
-&watchdog_max{
-	gpios=<&wd_pins>;
+/*&watchdog_max{*/
+/*	gpios=<&wd_pins>;*/
 
-};
+/*};*/
 /*&gpio1{*/
 /*gpio-ranges=<&omap3_pmx_core 0 32>;*/
 
