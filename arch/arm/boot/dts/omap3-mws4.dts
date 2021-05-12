@@ -44,7 +44,7 @@
 };
 	watchdog_max: watchdog {
 		compatible = "linux,wdt-gpio";
-//		gpios = <&gpio3 21 GPIO_ACTIVE_LOW>;
+		gpios = <&gpio3 21 GPIO_ACTIVE_LOW>;
 		hw_algo = "toggle";
 		always-running;
 		hw_margin_ms = <900>;
@@ -93,11 +93,11 @@
 			OMAP3_CORE1_IOPAD(0x214e, PIN_INPUT_PULLUP | MUX_MODE0)	/* sdmmc1_dat3.sdmmc1_dat3 */
 		>;
 	};
-	wd_pins: pinmux_wd_pins {
-		pinctrl-single,pins = <
-			OMAP3_CORE1_IOPAD(0x013E, PIN_OUTPUT | MUX_MODE0)	/* CONTROL_PADCONF_MCBSP2_CLKX	0x013E */
-		>;
-	};
+/*	wd_pins: pinmux_wd_pins {*/
+/*		pinctrl-single,pins = <*/
+/*			OMAP3_CORE1_IOPAD(0x013E, PIN_OUTPUT | MUX_MODE0)	// CONTROL_PADCONF_MCBSP2_CLKX	0x013E */
+/*		>;*/
+/*	};*/
 	i2c1_pins: pinmux_i2c1_pins {
 		pinctrl-single,pins = <
 			OMAP3_CORE1_IOPAD(0x21ba, PIN_INPUT_PULLUP | MUX_MODE0)	/* i2c1_scl */
@@ -122,10 +122,10 @@
 	};
 };
 
-&watchdog_max{
-	gpios=<&wd_pins>;
+/*&watchdog_max{*/
+/*	gpios=<&wd_pins>;*/
 
-};
+/*};*/
 
 &i2c1 {
 	pinctrl-names = "default";
