@@ -164,7 +164,7 @@ leds {
 &gpio4{
 
 phandle = < 0x0a>;
-}
+};
 
 &watchdog_max{
 	gpios = <0x0a  0 21 1>; //117
