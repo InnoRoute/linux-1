@@ -126,7 +126,10 @@
 /*	gpios=<&wd_pins>;*/
 
 /*};*/
+&gpio1{
+gpio-ranges=<&omap3_pmx_core 0 32>;
 
+};
 &i2c1 {
 	pinctrl-names = "default";
 	pinctrl-0 = <&i2c1_pins>;
