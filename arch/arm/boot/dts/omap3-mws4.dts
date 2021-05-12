@@ -42,15 +42,6 @@
      //(Minimum is System's Pagesize = 0x1000 Byte in my case
 
 };
-leds {
-		compatible = "gpio-leds";
-
-		heartbeat {
-			label = "mws4::usr0";
-			gpios = <&gpio4 6 GPIO_ACTIVE_HIGH>; /* 102 -> D6 LED */
-			linux,default-trigger = "heartbeat";
-		};
-	};
 	watchdog_max: watchdog {
 		compatible = "linux,wdt-gpio";
 		gpios = <&gpio3 21 GPIO_ACTIVE_LOW>;
@@ -71,16 +62,26 @@ leds {
 	hsusb2_phy: hsusb2_phy {
 		status = "disabled";
 	};
-/*		leds {*/
-/*		compatible = "gpio-leds";*/
-/*		pinctrl-names = "default";*/
-/*		pinctrl-0 = <&green_led_pins>;*/
-/*		ledb {*/
-/*			label = "mws4:green";*/
-/*			gpios = <&gpio4 6 GPIO_ACTIVE_HIGH>;  // gpio102 */
-/*			linux,default-trigger = "heartbeat";*/
-/*		};*/
-/*	};*/
+leds {
+		compatible = "gpio-leds";
+		pinctrl-names = "default";
+		pinctrl-0 = <&led_pins>;
+		led1 {
+			label = "led1";
+			gpios = <&gpio4 6 GPIO_ACTIVE_HIGH>; /* 102 -> D6 LED */
+			linux,default-trigger = "heartbeat";
+		};
+		led2 {
+			label = "led2";
+			gpios = <&gpio4 7 GPIO_ACTIVE_HIGH>; /* 102 -> D6 LED */
+			linux,default-trigger = "disk-activity";
+		};
+		led3 {
+			label = "led3";
+			gpios = <&gpio4 8 GPIO_ACTIVE_HIGH>; /* 102 -> D6 LED */
+			linux,default-trigger = "default-on";
+		};
+	};
 };
 &usbhshost {
 	status = "disabled";
