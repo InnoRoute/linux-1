@@ -46,7 +46,7 @@
 		compatible = "linux,wdt-gpio";
 		gpios = <&gpio4 21 GPIO_ACTIVE_LOW>; //117
 		hw_algo = "toggle";
-		always-running;
+//		always-running;
 		hw_margin_ms = <900>;
 	};
 	usb2512b@2c {
