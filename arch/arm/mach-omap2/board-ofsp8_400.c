@@ -974,7 +974,7 @@ static void __init ofsp8_400_init(void)
 		//omap3_mux_init(board_mux, OMAP_PACKAGE_CUS);
 		/* Currently (kernel 3.4) the pinctrl module of dt is not 
 		 * yet working, so doing muxing our own way: */
-		mux_ue_pinctrl();
+		//mux_ue_pinctrl();
 	}
 	//omap_hsmmc_init( get_omap2_hsmmc_info(mmc) );
 //	ofsp8_400_flash_init();
