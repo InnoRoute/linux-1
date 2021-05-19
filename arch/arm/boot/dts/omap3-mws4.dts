@@ -51,13 +51,13 @@
 /*     //(Minimum is System's Pagesize = 0x1000 Byte in my case*/
 
 /*};*/
-	watchdog_max: watchdog {
-		compatible = "linux,wdt-gpio";
-//		gpios = <&gpio4 21 1>; //117
-		hw_algo = "toggle";
-//		always-running;
-		hw_margin_ms = <900>;
-	};
+/*	watchdog_max: watchdog {*/
+/*		compatible = "linux,wdt-gpio";*/
+/*//		gpios = <&gpio4 21 1>; //117*/
+/*		hw_algo = "toggle";*/
+/*//		always-running;*/
+/*		hw_margin_ms = <900>;*/
+/*	};*/
 	usb2512b@2c {
 		compatible = "microchip,usb2517";
 //		reg = <0x2c>;
@@ -163,6 +163,11 @@ leds {
 			OMAP3_CORE1_IOPAD(0x2194, PIN_OUTPUT | MUX_MODE4)	/* GPO4*/
 			OMAP3_CORE1_IOPAD(0x2196, PIN_OUTPUT | MUX_MODE4)	/* GPO5*/
 			OMAP3_CORE1_IOPAD(0x2198, PIN_OUTPUT | MUX_MODE4)	/* GPO6*/
+			OMAP3_CORE1_IOPAD(0x2116, PIN_INPUT | MUX_MODE4) //IN1
+			OMAP3_CORE1_IOPAD(0x2118, PIN_INPUT | MUX_MODE4) //IN2
+			OMAP3_CORE1_IOPAD(0x2124, PIN_INPUT | MUX_MODE4) //IN3
+			OMAP3_CORE1_IOPAD(0x2126, PIN_INPUT | MUX_MODE4) //IN4
+			OMAP3_CORE1_IOPAD(0x2128, PIN_INPUT | MUX_MODE4) //IN5
 
 		>;
 	};
@@ -195,10 +200,10 @@ leds {
 /*gpio-ranges=<&omap3_pmx_core 160 32>;*/
 
 /*};*/
-&watchdog_max{
-	gpios = <&gpio4 21 1>; //117
+/*&watchdog_max{*/
+/*	gpios = <&gpio4 21 1>; //117*/
 
-};
+/*};*/
 &i2c1 {
 	pinctrl-names = "default";
 	pinctrl-0 = <&i2c1_pins>;
