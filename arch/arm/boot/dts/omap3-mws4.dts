@@ -51,13 +51,13 @@
 /*     //(Minimum is System's Pagesize = 0x1000 Byte in my case*/
 
 /*};*/
-/*	watchdog_max: watchdog {*/
-/*		compatible = "linux,wdt-gpio";*/
-/*//		gpios = <&gpio4 21 1>; //117*/
-/*		hw_algo = "toggle";*/
-/*//		always-running;*/
-/*		hw_margin_ms = <900>;*/
-/*	};*/
+	watchdog_max: watchdog {
+		compatible = "linux,wdt-gpio";
+		gpios = <&gpio4 21 1>; //117
+		hw_algo = "toggle";
+		always-running;
+		hw_margin_ms = <900>;
+	};
 	usb2512b@2c {
 		compatible = "microchip,usb2517";
 //		reg = <0x2c>;
