@@ -102,7 +102,7 @@ leds {
 		  255 0 0x6e000000 0x02d4>;	/* register space */
 
 	/* Chip select 0 */
-	nand at 0,0 {
+	nand@0,0 {
 		compatible = "ti,omap2-nand";
 		reg = <0 0 4		/* NAND I/O window, 4 bytes */
 		       255 0 0x02d4>;	/* GPMC register space */
