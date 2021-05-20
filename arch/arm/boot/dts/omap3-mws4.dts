@@ -127,23 +127,23 @@ leds {
 		gpmc,access-ns = <54>;
 		gpmc,wr-access-ns = <30>;
 
-		partition at 0 {
+		partition@0 {
 			label = "X-Loader";
 			reg = <0 0x80000>;
 		};
-		partition at 80000 {
+		partition@80000 {
 			label = "U-Boot";
 			reg = <0x80000 0x1e0000>;
 		};
-		partition at 1c0000 {
+		partition@1c0000 {
 			label = "U-Boot Env";
 			reg = <0x260000 0x20000>;
 		};
-		partition at 280000 {
+		partition@280000 {
 			label = "Kernel";
 			reg = <0x280000 0x400000>;
 		};
-		partition at 780000 {
+		partition@780000 {
 			label = "Filesystem";
 			reg = <0x680000 0xf980000>;
 		};
