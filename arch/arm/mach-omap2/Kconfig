@@ -189,11 +189,6 @@ config OMAP_PACKAGE_CBP
 comment "OMAP Legacy Platform Data Board Type"
 	depends on ARCH_OMAP2PLUS
 
-config MACH_OMAP3_OFSP8_400
-	bool "Ultratronik OFSP8 Rev.400 and higher"
-	depends on ARCH_OMAP3
-	select OMAP_PACKAGE_CUS
-
 config MACH_OMAP_GENERIC
 	bool
 
