@@ -1,3 +1,6 @@
+// devicetree driver for ax88796 platform device
+// ulbricht@innoroute.de 2021
+// GPLv3
 #include <linux/init.h>
 #include <linux/module.h>
 #include <linux/platform_device.h>
