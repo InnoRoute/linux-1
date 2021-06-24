@@ -271,14 +271,10 @@ leds {
 //	pinctrl-0 = <&uart3_pins>;
 };
 
+
 &usb_otg_hs {
-	pinctrl-names = "default";
-	pinctrl-0 = <&hsusb0_pins>;
-	interface-type = <0>;
-	usb-phy = <&usb2_phy>;
-	phys = <&usb2_phy>;
-	phy-names = "usb2-phy";
-	mode = <1>;
+	interface-type = <1>;
+	mode = <3>;
 	power = <50>;
 };
 
