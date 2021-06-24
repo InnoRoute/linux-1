@@ -274,7 +274,7 @@ leds {
 
 &usb_otg_hs {
 	interface-type = <0>;
-	mode = <3>;
+	mode = <1>;
 	power = <50>;
 };
 
