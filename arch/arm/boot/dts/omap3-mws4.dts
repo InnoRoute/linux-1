@@ -274,8 +274,8 @@ leds {
 
 &usb_otg_hs {
 	interface-type = <0>;
-	usb-phy = <&usb2_phy>;
-	phys = <&usb2_phy>;
+	usb-phy = <&usb0_phy>;
+	phys = <&usb0_phy>;
 	phy-names = "usb2-phy";
 	mode = <1>;
 	power = <50>;
