@@ -280,7 +280,7 @@ leds {
 	phys = <&usb2_phy>;
 	phy-names = "usb2-phy";
 	mode = <1>;
-	power = <50>;
+	power = <500>;
 };
 
 &iva {
