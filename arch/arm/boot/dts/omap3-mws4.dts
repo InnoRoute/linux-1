@@ -275,7 +275,6 @@ leds {
 &usb_otg_hs {
 	num-eps = <16>;
  	ram-bits = <12>;
- 	ctrl-module = <&omap_control_usb>;
 	interface-type = <0>;
 	usb-phy = <&usb2_phy>;
 	phys = <&usb2_phy>;
