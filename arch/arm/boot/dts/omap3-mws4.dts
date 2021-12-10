@@ -100,7 +100,7 @@ leds {
 		reg = <0 0 4		/* NAND I/O window, 4 bytes */
 		       255 0 0x02d4>;	/* GPMC register space */
 		interrupts = <20>;
-		ti,nand-ecc-opt = "hw";
+		ti,nand-ecc-opt = "bch4";
 		nand-bus-width = <16>;
 		#address-cells = <1>;
 		#size-cells = <1>;
