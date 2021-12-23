@@ -126,19 +126,23 @@ leds {
 		};
 		partition@40000 {
 			label = "U-Boot";
-			reg = <0x40000 0xC0000>;
-		};
-		partition@c0000 {
-			label = "U-Boot Env";
-			reg = <0xc0000 0x100000>;
+			reg = <0x40000 0x100000>;
 		};
 		partition@100000 {
-			label = "Kernel";
-			reg = <0x100000 0x4c0000>;
+			label = "U-Boot Env";
+			reg = <0x100000 0x120000>;
 		};
-		partition@4c0000 {
+		partition@120000 {
+			label = "dt";
+			reg = <0x120000 0x130000>;
+		};
+		partition@130000 {
+			label = "Kernel";
+			reg = <0x130000 0xB30000>;
+		};
+		partition@B30000 {
 			label = "Filesystem";
-			reg = <0x4c0000 0xf980000>;
+			reg = <0xB30000 0xf980000>;
 		};
 	};
 };
