@@ -134,15 +134,15 @@ leds {
 		};
 		partition@120000 {
 			label = "dt";
-			reg = <0x120000 0x130000>;
+			reg = <0x120000 0x140000>;
 		};
-		partition@130000 {
+		partition@140000 {
 			label = "Kernel";
-			reg = <0x130000 0xB30000>;
+			reg = <0x140000 0xB40000>;
 		};
 		partition@B30000 {
 			label = "Filesystem";
-			reg = <0xB30000 0xf980000>;
+			reg = <0xB40000 0xf4d0000>;
 		};
 	};
 };
