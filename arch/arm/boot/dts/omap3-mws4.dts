@@ -71,6 +71,7 @@ leds {
 		led_sm {
 			label = "led_sm";
 			gpios = <&gpio4 5 GPIO_ACTIVE_HIGH>; /* 101 */
+			default-state = "on";
 			
 		};
 		led1 {
@@ -87,6 +88,12 @@ leds {
 			label = "led3";
 			gpios = <&gpio4 8 GPIO_ACTIVE_HIGH>; /* 104 */
 			linux,default-trigger = "usb-host";
+		};
+		
+		led_usb {
+			label = "led_usb";
+			gpios = <&gpio4 14 GPIO_ACTIVE_HIGH>; /* 110 */
+			default-state = "on";
 		};
 	};
 };
@@ -294,12 +301,3 @@ leds {
 &sgx_module {
 	status = "disabled";
 };
-&gpio4 {
-	p110 {    
-						gpio-hog;
-            gpios = <&gpio4 14 GPIO_ACTIVE_HIGH>; /* 110 */
-            output-high; // activate USB hub at bootup
-      };
-
-
-}
