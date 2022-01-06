@@ -294,4 +294,12 @@ leds {
 &sgx_module {
 	status = "disabled";
 };
+&gpio4 {
+	p110 {    
+						gpio-hog;
+            gpios = <&gpio4 14 GPIO_ACTIVE_HIGH>; /* 110 */
+            output-high; // activate USB hub at bootup
+      };
 
+
+}
